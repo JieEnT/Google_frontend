@@ -9,7 +9,7 @@ const NavLinks = props => {
         <React.Fragment>
             <li className="MenuItem">
                 <NavLink to="/">
-                    Home
+                    Homed
                 </NavLink>
             </li>
             <li className="MenuItem">
