@@ -46,7 +46,6 @@ const Desc = styled.p`
 
 const Intro = () => {
   return <Container>
-  {/* <Image src={Background}></Image> */}
     <Landing>
     <Title>Pomona is gamified decentralised finance agricultural platform </Title>
     <Desc>We promote Singapore's "30-by-30" sustainability initiative through short-term investments in local vertical farming produce.</Desc>

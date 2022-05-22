@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Navbar from "./components/Navbar";
 import Intro from "./components/Intro";
 import Background from './assets/parallax-bg.gif';
+import About from './components/About';
 
 const Container = styled.div`
   height:100vh;
@@ -12,11 +13,17 @@ const Container = styled.div`
 
 
 const App = () => {
-  return <Container>
-  {/* <Image src={Background}/> */}
+  return (
+  <>
+  <Container>
   <Navbar/>
   <Intro/>
-  </Container>;
+  </Container>
+  <Container>
+    <About/>
+  </Container>
+  </>
+  );
 };
 
 export default App;
