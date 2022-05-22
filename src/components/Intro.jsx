@@ -24,7 +24,7 @@ const Landing = styled.div`
     justify-content:center;
 `;
 const Title = styled.h1`
-  width:60%;
+  width:70%;
   font-size:50px;
   color:white;
   text-align:center;
@@ -61,7 +61,7 @@ const Intro = () => {
         <Container>
           
           <Landing>
-          <Title>Pomona is gamified decentralised finance agricultural platform </Title>
+          <Title>Pomona is a gamified decentralised finance agricultural platform </Title>
           <Desc>We promote Singapore's "30-by-30" sustainability initiative through short-term investments in local vertical farming produce.</Desc>
           </Landing>
         </Container>
