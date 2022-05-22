@@ -1,29 +1,37 @@
-import styled from "styled-components";
-import Navbar from "./components/Navbar";
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Navigate,
+  Routes
+} from 'react-router-dom';
+
+import Navbar from "./components/Navigation/Navbar";
 import Intro from "./components/Intro";
-import Background from './assets/parallax-bg.gif';
-import About from './components/About';
 
-const Container = styled.div`
-  height:100vh;
-  overflow:hidden;
-  background-image: url(${Background});
-  background-size:cover;
-`;
+// Creation of routes
+let routes;
 
+routes = (
+  <Routes>
+    <Route path="/" element={<Intro/>} exact/>
+    <Route path="/marketplace" element={'marketplace'} exact/>
+    <Route path="/:userId/dashboard" element={'dashboard'} exact/>
+    <Route path="/:userId/profile" element={'profile'} exact/>
+    <Route
+        path="*"
+        element={<Navigate to="/" replace />}
+    />
+  </Routes>
+)
 
 const App = () => {
   return (
-  <>
-  <Container>
-  <Navbar/>
-  <Intro/>
-  </Container>
-  <Container>
-    <About/>
-  </Container>
-  </>
-  );
+    <Router>
+      <Navbar/>
+      <main>{routes}</main>
+    </Router>
+  )
 };
 
 export default App;
