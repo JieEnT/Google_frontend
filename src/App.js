@@ -8,7 +8,7 @@ import {
 
 import Navbar from "./components/Navigation/Navbar";
 import Intro from "./components/Intro";
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 // Creation of routes
 let routes;

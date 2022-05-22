@@ -2,50 +2,52 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import {ethers} from 'ethers';
 const Container = styled.div`
-    margin-right:50px;
     padding: 20px;
-    width:400px;
-    height:200px;
+    width:250px;
+    height:110px;
     -webkit-box-shadow: 0px 0px 17px -11px black;
     box-shadow: 0px 0px 15px -8px black;
     background-color:white;
     border-radius:10px;
     display:flex;
     flex-direction:column;
-    align-items:center;
+    align-items:left;
+    margin-top:120px;
 `;
 
 const AboutContainer = styled.div`
     display:flex;
     flex-direction:column;
-    align-items:center;
+    align-items:left;
     justify-content:center;
 `;
 const Title = styled.h1`
   margin-top:10px;
-  font-size:18px;
-  color:black;
-  text-align:center;
+  font-size:15px;
+  color:darkgrey;
+  text-align:left;
 `;
 
 const Desc = styled.p`
   width:90%;
-  font-size:18px;
+  font-size:15px;
   margin-top:10px;
-  text-align:center;
+  text-align:left;
   color:black;
 `;
 
 const Button = styled.button`
-  padding:15px;
+  padding:10px;
+  width:160px;
   background-color:pink;
   color:white;
   border-radius:10px;
   font-weight:bold;
   border:none;
-  letter-spacing:2px;
+  letter-spacing:1px;
   cursor:pointer;
-  margin-bottom:15px;
+  position:relative;
+  top:12px;
 `;
 
 const WalletCard = () => {
@@ -98,9 +100,12 @@ const WalletCard = () => {
     return (
         <Container>
         <AboutContainer>
+        {/* <Title>Account Address</Title> */}
+
+        <Title>Current Account Balance</Title>
+        <Desc> $ {userBalance}</Desc>
         <Button onClick={connectWalletHandler}>{connButtonText}</Button>
-        <Title>Address: {defaultAccount}</Title>
-        <Desc>Balance: {userBalance}</Desc>
+        {/* <Desc>{defaultAccount}</Desc> */}
         {errorMessage}
         </AboutContainer>
       </Container>  
