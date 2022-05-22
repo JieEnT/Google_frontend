@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 const Container = styled.div`
     height:50px;
-    background-color:pink;
     z-index:10;
 `;
 
@@ -42,12 +41,12 @@ const MenuItem = styled.li`
 const Button = styled.button`
     border: 2px solid white;
     padding: 10px 15px;
-    background-color:pink;
-    color:white;
+    background-color:white;
+    color:darkblue;
     font-weight:bold;
     border-radius:10px;
     cursor:pointer;
-    margin-right:30px;
+    margin-right:60px;
 `;
 
 const NavBar = () => {
@@ -55,12 +54,12 @@ const NavBar = () => {
     <Container>
         <Wrapper>
         <Left>
-         <Logo>SheforShe</Logo>
+         <Logo>Pomona</Logo>
          <Menu>
              <MenuItem>Home</MenuItem>
-             <MenuItem>Partners</MenuItem>
-             <MenuItem>Events</MenuItem>
-             <MenuItem>Contact</MenuItem>
+             <MenuItem>Marketplace</MenuItem>
+             <MenuItem>Dashboard</MenuItem>
+             <MenuItem>Profile</MenuItem>
          </Menu>
         </Left>
         <Button>Log in</Button>

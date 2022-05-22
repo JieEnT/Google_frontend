@@ -7,6 +7,7 @@ const Container = styled.div`
   height:100vh;
   overflow:hidden;
   background-image: url(${Background});
+  background-size:cover;
 `;
 
 const Image = styled.div`
