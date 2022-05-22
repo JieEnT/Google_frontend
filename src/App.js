@@ -10,12 +10,6 @@ const Container = styled.div`
   background-size:cover;
 `;
 
-const Image = styled.div`
-  width:100%;
-  height:100vh;
-  background-image: url(${Background});
-  z-index:-1;
-`;
 
 const App = () => {
   return <Container>
