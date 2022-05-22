@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+import Navbar from "./components/Navbar";
+import Intro from "./components/Intro";
+import Background from './assets/parallax-bg.gif';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const Container = styled.div`
+  height:100vh;
+  overflow:hidden;
+  background-image: url(${Background});
+`;
+
+const Image = styled.div`
+  width:100%;
+  height:100vh;
+  background-image: url(${Background});
+  z-index:-1;
+`;
+
+const App = () => {
+  return <Container>
+  {/* <Image src={Background}/> */}
+  <Navbar/>
+  <Intro/>
+  </Container>;
+};
 
 export default App;
