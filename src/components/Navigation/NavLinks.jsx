@@ -13,17 +13,17 @@ const NavLinks = props => {
                 </NavLink>
             </li>
             <li className="MenuItem">
-                <NavLink to="/">
+                <NavLink to="/marketplace">
                     MarketPlace
                 </NavLink>
             </li>
             <li className="MenuItem">
-                <NavLink to="/">
+                <NavLink to="/u1/dashboard">
                     Dashboard
                 </NavLink>
             </li>
             <li className="MenuItem">
-                <NavLink to="/">
+                <NavLink to="/u1/profile">
                     Profile
                 </NavLink>
             </li>

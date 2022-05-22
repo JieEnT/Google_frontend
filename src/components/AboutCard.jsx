@@ -42,7 +42,7 @@ const Desc = styled.p`
   color:black;
 `;
 
-const  AboutCard = ({image,title,desc}) => {
+const AboutCard = ({image, title, desc}) => {
   return (
     <Container>
       <AboutContainer>

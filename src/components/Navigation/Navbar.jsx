@@ -38,12 +38,15 @@ const NavBar = () => {
     return (
     <MainHeader>
             <h1 className="main-navigation__title">
-                <Link to="/marketplace">Pomona</Link>
+                <Link to="/">Pomona</Link>
             </h1>
             <Menu>
                 {/* Navlinks renders the different tabs */}
                 <NavLinks/>
             </Menu>
+            <Button>
+                Log in
+            </Button>
     </MainHeader>
     );
 };
