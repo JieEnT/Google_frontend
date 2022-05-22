@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import {ethers} from 'ethers';
+import Account from './wallet.png';
+
 const Container = styled.div`
     padding: 20px;
     width:250px;
@@ -10,9 +12,8 @@ const Container = styled.div`
     background-color:white;
     border-radius:10px;
     display:flex;
-    flex-direction:column;
     align-items:left;
-    margin-top:120px;
+    margin-top:100px;
 `;
 
 const AboutContainer = styled.div`
@@ -20,31 +21,37 @@ const AboutContainer = styled.div`
     flex-direction:column;
     align-items:left;
     justify-content:center;
+    margin-left:30px;
 `;
 const Title = styled.h1`
-  margin-top:10px;
   font-size:15px;
   color:darkgrey;
   text-align:left;
 `;
 
 const Desc = styled.p`
-  width:90%;
   font-size:15px;
   margin-top:10px;
   text-align:left;
   color:black;
 `;
+const Image = styled.img`
+  width:25%;
+  height:70px;
+  position:relative;
+  margin-top:20px;
+  margin-bottom:50px;
+  margin-left:20px;
+`;
 
 const Button = styled.button`
-  padding:10px;
-  width:160px;
-  background-color:pink;
+  padding:7px;
+  width:120px;
+  background-color:rgba(26, 58, 122);
   color:white;
-  border-radius:10px;
+  border-radius:15px;
   font-weight:bold;
   border:none;
-  letter-spacing:1px;
   cursor:pointer;
   position:relative;
   top:12px;
@@ -99,6 +106,7 @@ const WalletCard = () => {
 
     return (
         <Container>
+        <Image src= {Account}></Image>
         <AboutContainer>
         {/* <Title>Account Address</Title> */}
 

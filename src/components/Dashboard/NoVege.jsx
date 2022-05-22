@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import Vege from './organic-food.png';
+
 const Container = styled.div`
-    margin-right:50px;
+    margin-right:100px;
     padding: 20px;
     width:250px;
     height:110px;
@@ -10,9 +12,8 @@ const Container = styled.div`
     background-color:white;
     border-radius:10px;
     display:flex;
-    flex-direction:column;
     align-items:left;
-    margin-top:120px;
+    margin-top:100px;
 `;
 
 const AboutContainer = styled.div`
@@ -20,6 +21,7 @@ const AboutContainer = styled.div`
     flex-direction:column;
     align-items:left;
     justify-content:center;
+    margin-left:30px;
 `;
 const Title = styled.h1`
   margin-top:10px;
@@ -36,12 +38,22 @@ const Desc = styled.p`
   color:black;
 `;
 
+const Image = styled.img`
+  width:25%;
+  height:70px;
+  position:relative;
+  margin-top:20px;
+  margin-bottom:50px;
+  margin-left:20px;
+`;
+
 const NoVege = () => {
   return (
     <Container>
+         <Image src= {Vege}></Image>
       <AboutContainer>
       <Title>Number of vegetables invested</Title>
-      <Desc> (number of vegetables here)</Desc>
+      <Desc> (number here)</Desc>
       </AboutContainer>
     </Container>
   )

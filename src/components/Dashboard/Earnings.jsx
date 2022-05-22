@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import Dollar from './dollar.jpg'
 const Container = styled.div`
-    margin-left:50px;
+    margin-left:100px;
     padding: 20px;
     width:250px;
     height:110px;
@@ -10,9 +11,8 @@ const Container = styled.div`
     background-color:white;
     border-radius:10px;
     display:flex;
-    flex-direction:column;
     align-items:left;
-    margin-top:120px;
+    margin-top:100px;
 `;
 
 const AboutContainer = styled.div`
@@ -22,26 +22,32 @@ const AboutContainer = styled.div`
     justify-content:center;
 `;
 const Title = styled.h1`
-  margin-top:10px;
   font-size:15px;
   color:darkgrey;
   text-align:left;
 `;
 
 const Desc = styled.p`
-  width:90%;
+  width:100%;
   font-size:15px;
   margin-top:10px;
   text-align:left;
   color:black;
 `;
-
+const Image = styled.img`
+  width:40%;
+  height:100px;
+  position:relative;
+  margin-top:5px;
+  margin-bottom:50px;
+`;
 const Earnings = () => {
   return (
     <Container>
+      <Image src= {Dollar}></Image>
       <AboutContainer>
       <Title>Earnings</Title>
-      <Desc> $ (Insert earning here)</Desc>
+      <Desc> $ (insert earnings)</Desc>
       </AboutContainer>
     </Container>
   )
