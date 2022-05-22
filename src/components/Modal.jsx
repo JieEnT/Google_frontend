@@ -41,6 +41,7 @@ const LoginForm = (props) => {
       password: data.get('password'),
     })
     auth.login();
+    //To exit the modal after login
     props.onCancel();
   },[]);
 
