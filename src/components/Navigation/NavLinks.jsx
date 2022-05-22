@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components'
 
 import './NavLinks.css'
+import {AuthContext} from "../../context/auth-context";
 
 const NavLinks = props => {
+    const auth = useContext(AuthContext);
+
     return(
         <React.Fragment>
             <li className="MenuItem">
@@ -17,16 +20,16 @@ const NavLinks = props => {
                     MarketPlace
                 </NavLink>
             </li>
-            <li className="MenuItem">
+            {auth.isLoggedIn && <li className="MenuItem">
                 <NavLink to="/u1/dashboard">
                     Dashboard
                 </NavLink>
-            </li>
-            <li className="MenuItem">
+            </li>}
+            {auth.isLoggedIn && <li className="MenuItem">
                 <NavLink to="/u1/profile">
                     Profile
                 </NavLink>
-            </li>
+            </li>}
         </React.Fragment>
 
     )

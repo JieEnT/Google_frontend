@@ -1,13 +1,12 @@
-import React from 'react';
+import React, {useState, useContext, useCallback} from 'react';
 import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
 
 import Backdrop from './Backdrop';
-import './Modal.css';
+import './LoginModal.css';
+import {AuthContext} from '../context/auth-context';
 
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
@@ -16,7 +15,6 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 function Copyright(props) {
   return (
@@ -32,15 +30,20 @@ function Copyright(props) {
 }
 
 
-const LoginForm = () => {
-  const handleSubmit = (event) => {
+const LoginForm = (props) => {
+  const auth = useContext(AuthContext);
+
+  const handleSubmit = useCallback((event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
       email: data.get('email'),
       password: data.get('password'),
-    });
-  };
+    })
+    auth.login();
+    props.onCancel();
+  },[]);
+
   return(
         <Container component="main" maxWidth="xs">
           <Box
@@ -110,7 +113,7 @@ const ModalOverlay = props => {
   const content = (
       // Style prop for adding of inline-styles
       <div className={`modal ${props.className}`} style={props.style}>
-          <LoginForm/>
+          <LoginForm {...props}/>
       </div>
   );
   return ReactDOM.createPortal(content, document.getElementById('modal-hook'));
