@@ -43,7 +43,6 @@ const Intro = () => {
     <React.Fragment>
       <WrapperContainer>
         <Container>
-          
           <Landing>
           <Title>Pomona is a gamified decentralised finance agricultural platform </Title>
           <Desc>We promote Singapore's "30-by-30" sustainability initiative through short-term investments in local vertical farming produce.</Desc>

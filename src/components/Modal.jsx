@@ -31,7 +31,6 @@ function Copyright(props) {
   );
 }
 
-const theme = createTheme();
 
 const LoginForm = () => {
   const handleSubmit = (event) => {
@@ -43,9 +42,7 @@ const LoginForm = () => {
     });
   };
   return(
-     <ThemeProvider theme={theme}>
         <Container component="main" maxWidth="xs">
-          <CssBaseline />
           <Box
             sx={{
               marginTop: 8,
@@ -106,19 +103,17 @@ const LoginForm = () => {
           </Box>
           <Copyright sx={{ mt: 8, mb: 4 }} />
         </Container>
-      </ThemeProvider>
   )
 }
 
 const ModalOverlay = props => {
-
-    const content = (
-        // Style prop for adding of inline-styles
-        <div className={`modal ${props.className}`} style={props.style}>
-            <LoginForm/>
-        </div>
-    );
-    return ReactDOM.createPortal(content, document.getElementById('modal-hook'));
+  const content = (
+      // Style prop for adding of inline-styles
+      <div className={`modal ${props.className}`} style={props.style}>
+          <LoginForm/>
+      </div>
+  );
+  return ReactDOM.createPortal(content, document.getElementById('modal-hook'));
 }
 
 const Modal = props => {
