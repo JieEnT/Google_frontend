@@ -18,7 +18,7 @@ const About = () => {
       <AboutCard image = {Vegetable} title="Track the growth of your vegetables" desc="Track the growth of the vegetables you have invested in real-time through integration with IoT sensors in farms."/>
       <AboutCard image = {Earning} title="Review your investment earnings" desc="Track your earnings and keep up to update on the next harvest cycle for your vegetables on the dashboard."/>
     </Container>
-  )
+  );
 }
 
 export default About

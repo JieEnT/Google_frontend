@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 import './NavLinks.css'
 
@@ -13,17 +13,17 @@ const NavLinks = props => {
                 </NavLink>
             </li>
             <li className="MenuItem">
-                <NavLink to="/">
+                <NavLink to="/marketplace">
                     MarketPlace
                 </NavLink>
             </li>
             <li className="MenuItem">
-                <NavLink to="/">
+                <NavLink to="/:userId/dashboard">
                     Dashboard
                 </NavLink>
             </li>
             <li className="MenuItem">
-                <NavLink to="/">
+                <NavLink to="/:userId/profile">
                     Profile
                 </NavLink>
             </li>
