@@ -37,23 +37,20 @@ const Desc = styled.p`
   color:white;
 `;
 
-const Info = styled.div`
-  display:flex;
-  margin-top:50px;
-`;
+// const Info = styled.div`
+//   display:flex;
+//   margin-top:50px;
+// `;
 
-const Button = styled.button`
-  padding:15px;
-  background-color:red;
-  color:white;
-  border-radius:10px;
-  font-weight:bold;
-  border:none;
-  letter-spacing:2px;
-  cursor:pointer;
-`;
-// const Right = styled.div`
-//   width:40%;
+// const Button = styled.button`
+//   padding:15px;
+//   background-color:red;
+//   color:white;
+//   border-radius:10px;
+//   font-weight:bold;
+//   border:none;
+//   letter-spacing:2px;
+//   cursor:pointer;
 // `;
 
 const Intro = () => {
