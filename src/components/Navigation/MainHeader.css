@@ -1,0 +1,15 @@
+.main-header{
+    height: 0px;
+    z-index: 10; 
+    align-items:center;
+    background: transparent;
+    justify-content: space-between;
+}
+
+.left{
+    height: 100px;
+    width:60%;
+    display:flex;
+    align-items:center; 
+    justify-content:space-between;
+}

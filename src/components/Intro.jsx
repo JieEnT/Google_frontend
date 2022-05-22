@@ -1,10 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
+import Background from '../assets/parallax-bg.gif';
+import NavBar from './Navigation/Navbar';
+
+const WrapperContainer = styled.div`
+  height:100vh;
+  overflow:hidden;
+  background-image: url(${Background});
+  background-size:cover;
+`;
 
 const Container = styled.div`
-    height: calc(100vh - 90px);
+    height: 85vh;
     display:flex;
-    padding:20px;
+    padding:100px;
 `;
 
 const Landing = styled.div`
@@ -48,16 +57,20 @@ const Button = styled.button`
 // `;
 
 const Intro = () => {
-  return <Container>
-  {/* <Image src={Background}></Image> */}
-    <Landing>
-    <Title>Pomona is gamified decentralised finance agricultural platform </Title>
-    <Desc>We promote Singapore's "30-by-30" sustainability initiative through short-term investments in local vertical farming produce.</Desc>
-    <Info>
-      {/* <Button>BECOME A MEMBER</Button> */}
-    </Info>
-    </Landing>
-  </Container>;
+  return(
+    <WrapperContainer>
+      <Container>
+        
+        <Landing>
+        <Title>Pomona is gamified decentralised finance agricultural platform </Title>
+        <Desc>We promote Singapore's "30-by-30" sustainability initiative through short-term investments in local vertical farming produce.</Desc>
+        <Info>
+          {/* <Button>BECOME A MEMBER</Button> */}
+        </Info>
+        </Landing>
+      </Container>;
+    </WrapperContainer>
+  ) 
 };
 
 export default Intro; 
