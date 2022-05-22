@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Background from '../assets/parallax-bg.gif';
 import NavBar from './Navigation/Navbar';
+import About from './About'
 
 const WrapperContainer = styled.div`
   height:100vh;
@@ -55,18 +56,21 @@ const Desc = styled.p`
 
 const Intro = () => {
   return(
-    <WrapperContainer>
-      <Container>
-        
-        <Landing>
-        <Title>Pomona is gamified decentralised finance agricultural platform </Title>
-        <Desc>We promote Singapore's "30-by-30" sustainability initiative through short-term investments in local vertical farming produce.</Desc>
-        <Info>
-          {/* <Button>BECOME A MEMBER</Button> */}
-        </Info>
-        </Landing>
-      </Container>;
-    </WrapperContainer>
+    <React.Fragment>
+      <WrapperContainer>
+        <Container>
+          
+          <Landing>
+          <Title>Pomona is gamified decentralised finance agricultural platform </Title>
+          <Desc>We promote Singapore's "30-by-30" sustainability initiative through short-term investments in local vertical farming produce.</Desc>
+          </Landing>
+        </Container>
+      </WrapperContainer>
+      <WrapperContainer>
+        <About/>
+      </WrapperContainer>
+    </React.Fragment>
+
   ) 
 };
 
