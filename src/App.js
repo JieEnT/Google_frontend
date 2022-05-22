@@ -9,6 +9,7 @@ import {
 import Navbar from "./components/Navigation/Navbar";
 import Intro from "./components/Intro";
 
+
 // Creation of routes
 let routes;
 

@@ -5,29 +5,117 @@ import { CSSTransition } from 'react-transition-group';
 import Backdrop from './Backdrop';
 import './Modal.css';
 
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+function Copyright(props) {
+  return (
+    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+      {'Copyright © '}
+      <Link color="inherit" href="https://mui.com/">
+        Your Website
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
+
+const theme = createTheme();
+
+const LoginForm = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    console.log({
+      email: data.get('email'),
+      password: data.get('password'),
+    });
+  };
+  return(
+     <ThemeProvider theme={theme}>
+        <Container component="main" maxWidth="xs">
+          <CssBaseline />
+          <Box
+            sx={{
+              marginTop: 8,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
+            <Typography component="h1" variant="h5">
+              Sign in
+            </Typography>
+            <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="email"
+                label="Email Address"
+                name="email"
+                autoComplete="email"
+                autoFocus
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                autoComplete="current-password"
+              />
+              <FormControlLabel
+                control={<Checkbox value="remember" color="primary" />}
+                label="Remember me"
+              />
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+              >
+                Sign In
+              </Button>
+              <Grid container>
+                <Grid item xs>
+                  <Link href="#" variant="body2">
+                    Forgot password?
+                  </Link>
+                </Grid>
+                <Grid item>
+                  <Link href="#" variant="body2">
+                    {"Don't have an account? Sign Up"}
+                  </Link>
+                </Grid>
+              </Grid>
+            </Box>
+          </Box>
+          <Copyright sx={{ mt: 8, mb: 4 }} />
+        </Container>
+      </ThemeProvider>
+  )
+}
+
 const ModalOverlay = props => {
+
     const content = (
         // Style prop for adding of inline-styles
         <div className={`modal ${props.className}`} style={props.style}>
-            <header className={`modal__header ${props.headerClass}`}>
-                <h2>{props.header}</h2>
-            </header>
-            <form
-                // This onSubmit statement over here prevents the automatic refresh of the 
-                // webpage that usually happens when one submits the form 
-                onSubmit={
-                    props.onSubmit ? props.onSubmit : event => event.preventDefault()
-                }
-            >
-                {/* We separate the inputs of the form as well as the submit buttons of the form into content and footer but we have to wrap them with divs */}
-                <div className={`modal__content ${props.contentClass}`}>
-                    {props.children}
-                </div>
-                <footer className={`modal__footer ${props.footerClass}`}>
-                    {/* Will render a button that closes the modal */}
-                    {props.footer}
-                </footer>
-            </form>
+            <LoginForm/>
         </div>
     );
     return ReactDOM.createPortal(content, document.getElementById('modal-hook'));
@@ -48,7 +136,6 @@ const Modal = props => {
             >
                 {/* We will spread the attributes of props unto ModalOverlay, when the Modal is triggered 
                 then the ModalOverlay will be triggered and rendered in the index.html */}
-                {/* Note that props would be the google maps in this case */}
                 <ModalOverlay {...props}/>
             </CSSTransition>
         </React.Fragment>

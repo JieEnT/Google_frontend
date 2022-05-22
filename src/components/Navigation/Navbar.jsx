@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 import NavLinks from './NavLinks';
 import MainHeader from './MainHeader';
+import Login from '../Login';
 
 import './Navbar.css';
 
@@ -23,16 +24,6 @@ const MenuItem = styled.li`
     color:white;
     cursor:pointer;
 `;
-const Button = styled.button`
-    border: 2px solid white;
-    padding: 10px 15px;
-    background-color:white;
-    color:darkblue;
-    font-weight:bold;
-    border-radius:10px;
-    cursor:pointer;
-    margin-right:60px;
-`;
 
 const NavBar = () => {
     return (
@@ -44,9 +35,7 @@ const NavBar = () => {
                 {/* Navlinks renders the different tabs */}
                 <NavLinks/>
             </Menu>
-            <Button>
-                Log in
-            </Button>
+            <Login/>
     </MainHeader>
     );
 };
