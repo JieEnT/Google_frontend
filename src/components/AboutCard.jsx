@@ -23,6 +23,7 @@ const AboutContainer = styled.div`
 `;
 const Image = styled.img`
   width:75%;
+  height:160px;
   position:relative;
   top:20px;
   margin-bottom:50px;
