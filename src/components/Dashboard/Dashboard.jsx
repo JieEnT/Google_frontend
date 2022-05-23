@@ -5,12 +5,16 @@ import WalletCard from './WalletCard'
 import NextHarvest from './NextHarvest'
 import NoVege from './NoVege'
 import Nursery from './Nursery'
+import Background from './dashboardbg.jpg';
 
 const Container = styled.div`
     height:100vh;
     display:flex;
     flex-direction:column;
-    background-color:rgba(26, 58, 122);
+    background-image: url(${Background});
+    background-size:cover;
+    overflow:hidden;
+    ${'' /* background-color:rgba(26, 58, 122); */}
 `;
 const AboutContainer = styled.div`
     display:flex;
@@ -21,7 +25,7 @@ const Dashboard = () => {
   return (
     <Container>
     <AboutContainer>
-    <Earnings/>
+      <Earnings/>
       <WalletCard/>
       <NextHarvest/>
       <NoVege/>
