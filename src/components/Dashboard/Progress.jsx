@@ -22,8 +22,8 @@ const Container = styled.div`
           height:10px;
           border-radius:20px;
           background-color:${props => props.color};
+          transition: 1s ease 0.3s;
       }
-      margin-bottom:30px;
 `;
 
 const Progress = ({ value, max, color, width }) => {

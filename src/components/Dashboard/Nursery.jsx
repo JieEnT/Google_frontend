@@ -4,7 +4,7 @@ import EmptyNursery from './empty_nursery.jpg'
 import Progress from './Progress'
 
 const Container = styled.div`
-    margin:25px 100px;
+    margin:15px 100px;
     padding: 20px;
     height:400px;
     -webkit-box-shadow: 0px 0px 17px -11px black;
@@ -21,18 +21,27 @@ const AboutContainer = styled.div`
     flex-direction:column;
     align-items:center;
     justify-content:left;
+    margin-right:150px;
 `;
 const Title = styled.h1`
+  font-size:50px;
+  color:black;
+  text-align:center;
+  margin:15px;
+`;
+
+const Desc = styled.p`
   font-size:15px;
   color:black;
   text-align:left;
   margin:15px;
+  font-weight:bold;
 `;
 
 const Image = styled.img`
   height:300px;
   position:relative;
-  margin:15px 50px;
+  margin:5px;
 `;
 
 const Nursery = () => {
@@ -40,25 +49,25 @@ const Nursery = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setValue (oldValue => {
-                const newValue = oldValue + 10;
+                const newValue = oldValue + 5;
 
                 if (newValue === 100) {
                     clearInterval(interval);
                 }
                 return newValue;
             });
-        },1000);
+        },10000);
     },[]);
 
   return (
     <Container>
     <AboutContainer>
     <Image src= {EmptyNursery}></Image>
+    <Desc>To next stage of agricultural cycle</Desc>
+    <Progress color={"darkblue"} width={"300px"}value={value} max={100}/>
     </AboutContainer>
     <AboutContainer>
-    <Title>To next stage of agricultural cycle</Title>
-    <Progress color={"darkblue"} width={"300px"}value={value} max={100}/>
-    <Title>Vegetables in garden: Kale</Title>
+    <Title>My Plants</Title>
     </AboutContainer>
     </Container>
   )

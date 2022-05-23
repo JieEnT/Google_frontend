@@ -5,8 +5,8 @@ import Vege from './organic-food.png';
 const Container = styled.div`
     margin-right:100px;
     padding: 20px;
-    width:250px;
-    height:110px;
+    width:260px;
+    height:100px;
     -webkit-box-shadow: 0px 0px 17px -11px black;
     box-shadow: 0px 0px 15px -8px black;
     background-color:white;

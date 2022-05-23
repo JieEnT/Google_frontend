@@ -22,6 +22,7 @@ const Landing = styled.div`
     flex-direction:column;
     align-items:center;
     justify-content:center;
+    margin:auto;
 `;
 const Title = styled.h1`
   width:70%;
