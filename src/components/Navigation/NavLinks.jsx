@@ -1,6 +1,5 @@
 import React, {useContext} from 'react';
 import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
 
 import './NavLinks.css'
 import {AuthContext} from "../../context/auth-context";

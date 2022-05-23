@@ -10,21 +10,9 @@ import {AuthContext} from "../../context/auth-context";
 
 import './Navbar.css';
 
-const Logo = styled.h1 `
-
-    ${'' /* text-decoration: underline crimson; */}
-`;
-
 const Menu = styled.ul`
     display:flex;
     list-style:none;
-`;
-const MenuItem = styled.li`
-    margin-right:30px;
-    font-size:20px;
-    font-weight:bold;
-    color:white;
-    cursor:pointer;
 `;
 
 const NavBar = () => {

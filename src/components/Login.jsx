@@ -1,8 +1,7 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 
 import styled from 'styled-components'
 import Modal from './Modal';
-import { AuthContext } from '../context/auth-context';
 
 const Button = styled.button`
     border: 2px solid white;
@@ -16,7 +15,6 @@ const Button = styled.button`
 `;
 
 const Login = props => {
-    const auth = useContext(AuthContext);
     const [showLoginModal, setShowLoginModal] = useState(false);
 
     const closeShowLoginModal = () => {
