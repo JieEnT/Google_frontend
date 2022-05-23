@@ -8,6 +8,7 @@ import {
 
 import Navbar from "./components/Navigation/Navbar";
 import Intro from "./components/Intro";
+import Dashboard from './components/Dashboard/Dashboard'
 import { AuthContext } from './context/auth-context';
 
 const App = () => {
@@ -32,7 +33,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Intro/>} exact/>
             <Route path="/marketplace" element={'marketplace'} exact/>
-            <Route path="/:userId/dashboard" element={'dashboard'} exact/>
+            <Route path="/:userId/dashboard" element={<Dashboard/>} exact/>
             <Route path="/:userId/profile" element={'profile'} exact/>
             <Route
                 path="*"
