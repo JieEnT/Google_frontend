@@ -21,7 +21,7 @@ function Copyright(props) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        Pomona
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -120,7 +120,7 @@ const ModalOverlay = props => {
   return ReactDOM.createPortal(content, document.getElementById('modal-hook'));
 }
 
-const Modal = props => {
+const LoginModal = props => {
     return (
         <React.Fragment>
             {/* Backdrop is to make everything at the back darker */}
@@ -141,4 +141,4 @@ const Modal = props => {
     );
 };
 
-export default Modal;
+export default LoginModal;
