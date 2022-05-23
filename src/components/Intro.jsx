@@ -38,28 +38,11 @@ const Desc = styled.p`
   color:white;
 `;
 
-// const Info = styled.div`
-//   display:flex;
-//   margin-top:50px;
-// `;
-
-// const Button = styled.button`
-//   padding:15px;
-//   background-color:red;
-//   color:white;
-//   border-radius:10px;
-//   font-weight:bold;
-//   border:none;
-//   letter-spacing:2px;
-//   cursor:pointer;
-// `;
-
 const Intro = () => {
   return(
     <React.Fragment>
       <WrapperContainer>
         <Container>
-          
           <Landing>
           <Title>Pomona is a gamified decentralised finance agricultural platform </Title>
           <Desc>We promote Singapore's "30-by-30" sustainability initiative through short-term investments in local vertical farming produce.</Desc>
