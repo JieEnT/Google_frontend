@@ -22,12 +22,12 @@ const Container = styled.div`
 const MarketPlace = () => {
     return(
         <Container>
-            <iframe src='https://testnets.opensea.io/collection/kale?embed=true'
+            {/* <iframe src='https://testnets.opensea.io/collection/kale?embed=true'
                 width='100%'
                 height='100%'
                 frameborder='0'
                 allowFullScreen>
-            </iframe>
+            </iframe> */}
         </Container>
     )
 }

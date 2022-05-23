@@ -22,8 +22,8 @@ const NavBar = () => {
 
     return (
         <MainHeader headerStyle={headerStyle}>
-                <h1 className = "main-navigation__title">
-                    <Link to="/">Pomona</Link>
+                <h1 className = "main-title">
+                    Pomona
                 </h1>
                 <Menu>
                     {/* Navlinks renders the different tabs */}
