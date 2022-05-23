@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import styled from 'styled-components'
-import Modal from './Modal';
+import LoginModal from './LoginModal';
 
 const Button = styled.button`
     border: 2px solid white;
@@ -27,11 +27,11 @@ const Login = props => {
 
     return(
         <React.Fragment>
-            <Modal 
+            <LoginModal 
                 show={showLoginModal}
                 onCancel={closeShowLoginModal}
             >
-            </Modal>
+            </LoginModal>
             <Button onClick={openShowLoginModal}>
                 Login
             </Button>
