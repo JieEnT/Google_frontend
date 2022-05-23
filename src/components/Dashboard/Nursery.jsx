@@ -25,7 +25,8 @@ const AboutContainer = styled.div`
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    margin-right:150px;
+    margin:auto;
+    ${'' /* margin-right:150px; */}
 `;
 const Title = styled.h1`
   font-size:30px;
@@ -49,6 +50,11 @@ const Image = styled.img`
   ${'' /* margin:5px; */}
   display:flex;
   justify-content:flex-start;
+
+  @media screen and (max-width: 1200px) {
+    width:70%;
+    height:70%;
+}
 `;
 
 const Nursery = () => {

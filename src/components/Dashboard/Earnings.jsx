@@ -12,6 +12,11 @@ const Container = styled.div`
     border-radius:10px;
     display:flex;
     align-items:left;
+
+    @media screen and (max-width: 1200px) {
+        width:200px;
+        height:100px;
+    }
 `;
 
 const AboutContainer = styled.div`
@@ -24,6 +29,10 @@ const Title = styled.h1`
   font-size:15px;
   color:darkgrey;
   text-align:left;
+
+  @media screen and (max-width: 1200px) {
+        font-size:13px;
+    }
 `;
 
 const Desc = styled.p`
@@ -32,6 +41,10 @@ const Desc = styled.p`
   margin-top:10px;
   text-align:left;
   color:black;
+
+  @media screen and (max-width: 1200px) {
+        font-size:13px;
+    }
 `;
 const Image = styled.img`
   width:40%;

@@ -18,6 +18,10 @@ const Container = styled.div`
                 transform:scale(1.1);
                 transition: all 2s ease;
             }
+    @media screen and (max-width: 1200px) {
+        width:120px;
+        height:180px;
+    }
 `;
 
 const AboutContainer = styled.div`
@@ -35,6 +39,11 @@ const Image = styled.img`
   background-color:#eeee;
   padding:45px 40px;
   border-radius:15px;
+
+  @media screen and (max-width: 1200px) {
+        width:40px;
+        height:40px;
+    }
 `;
 const Title = styled.h1`
   font-size:15px;
