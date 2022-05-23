@@ -14,6 +14,7 @@ const Container = styled.div`
     background-image: url(${Background});
     background-size:cover;
     overflow:hidden;
+    margin:auto;
     ${'' /* background-color:rgba(26, 58, 122); */}
 `;
 const AboutContainer = styled.div`

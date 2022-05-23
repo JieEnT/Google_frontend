@@ -17,7 +17,7 @@ const Container = styled.div`
     border-radius:10px;
     display:flex;
     align-items:center;
-    justify-content:left;
+    justify-content:center;
 `;
 
 const AboutContainer = styled.div`
@@ -45,7 +45,10 @@ const Desc = styled.p`
 const Image = styled.img`
   height:300px;
   position:relative;
-  margin:5px;
+  margin:auto;
+  ${'' /* margin:5px; */}
+  display:flex;
+  justify-content:flex-start;
 `;
 
 const Nursery = () => {
