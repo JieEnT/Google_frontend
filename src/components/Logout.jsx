@@ -1,7 +1,6 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 
 import styled from 'styled-components'
-import Modal from './Modal';
 import { AuthContext } from '../context/auth-context';
 
 const Button = styled.button`

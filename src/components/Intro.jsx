@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import Background from '../assets/parallax-bg.gif';
-import NavBar from './Navigation/Navbar';
 import About from './About'
 
 const WrapperContainer = styled.div`
