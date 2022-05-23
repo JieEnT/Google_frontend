@@ -19,7 +19,7 @@ const NavLinks = ({setHeaderStyle}) => {
                     MarketPlace
                 </NavLink>
             </li>
-            {auth.isLoggedIn && <li className="MenuItem" onClick={() => setHeaderStyle("main-header-two")}>
+            {auth.isLoggedIn && <li className="MenuItem" onClick={() => setHeaderStyle("main-header")}>
                 <NavLink to="/u1/dashboard">
                     Dashboard
                 </NavLink>

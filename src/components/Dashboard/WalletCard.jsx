@@ -13,7 +13,6 @@ const Container = styled.div`
     border-radius:10px;
     display:flex;
     align-items:left;
-    margin-top:100px;
 `;
 
 const AboutContainer = styled.div`
