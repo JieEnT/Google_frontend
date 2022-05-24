@@ -37,7 +37,7 @@ const Image = styled.img`
   top:0px;
   margin-bottom:10px;
   background-color:#eeee;
-  padding:45px 40px;
+  padding:40px 35px;
   border-radius:15px;
 
   @media screen and (max-width: 1200px) {
@@ -54,18 +54,19 @@ const Title = styled.h1`
 const Desc = styled.p`
   width:90%;
   font-size:12px;
-  margin-top:5px;
+  margin-top:3px;
   text-align:center;
   color:black;
 `;
 
-const PlantCard = ({image, title, desc}) => {
+const PlantCard = ({image, title, desc, value}) => {
   return (
     <Container>
       <AboutContainer>
       <Image src= {image}></Image>
       <Title>{title}</Title>
       <Desc>{desc}</Desc>
+      <Desc>{value}</Desc>
       </AboutContainer>
     </Container>
   )
