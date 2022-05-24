@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react';
+import React, {useState, useCallback, useEffect} from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -15,6 +15,15 @@ import { AuthContext } from './context/auth-context';
 const App = () => {
 
   const[isLoggedIn, setIsLoggedIn] = useState(false);
+ 
+  //Set session storage so that is is still logged in upon refresh
+  useEffect(() => {
+    setIsLoggedIn(JSON.parse(window.sessionStorage.getItem("isLoggedIn")));
+  }, []);
+
+  useEffect(() => {
+    window.sessionStorage.setItem("isLoggedIn", isLoggedIn);
+  }, [isLoggedIn]);
 
   const login = useCallback(() => {
     setIsLoggedIn(true);
@@ -30,6 +39,7 @@ const App = () => {
 
   //Switch routes in accordance to whether it is logged in
   if(isLoggedIn){
+        {console.log("getting logged in")}
         routes = (
           <Routes>
             <Route path="/" element={<Intro/>} exact/>
@@ -43,6 +53,7 @@ const App = () => {
           </Routes>
         )
   }else{
+    {console.log("getting logged out")}
       routes = (
           <Routes>
             <Route path="/" element={<Intro/>} exact/>
