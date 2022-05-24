@@ -1,5 +1,4 @@
-import React, {useContext, useState, useEffect} from 'react'
-import { Link } from 'react-router-dom';
+import React, {useContext, useState, useEffect} from 'react';
 
 import styled from 'styled-components'
 import NavLinks from './NavLinks';
@@ -20,24 +19,31 @@ const NavBar = () => {
 
     const [headerStyle, setHeaderStyle] = useState("main-header");
 
-    useEffect(() => {
-        switch(window.location.pathname){
-            case '/':
-                setHeaderStyle("main-header");
-                break;
-            case '/marketplace':
-                setHeaderStyle("main-header-two");
-                break;
-            case '/u1/dashboard':
-                setHeaderStyle("main-header");
-                break;
-            case '/u1/profile':
-                setHeaderStyle("main-header-two");
-                break;
-            default:
-                setHeaderStyle("main-header");
-        }
-    }, [window.location.pathname]);
+    
+    const setStyleOnLoc = () => {
+            switch(window.location.pathname){
+                case '/':
+                    setHeaderStyle("main-header");
+                    break;
+                case '/marketplace':
+                    setHeaderStyle("main-header-two");
+                    break;
+                case '/u1/dashboard':
+                    setHeaderStyle("main-header");
+                    break;
+                case '/u1/profile':
+                    setHeaderStyle("main-header-two");
+                    break;
+                default:
+                    setHeaderStyle("main-header");
+            }
+    }
+
+
+    useEffect( setStyleOnLoc , [window.location.pathname]);
+
+    //So that the right navigation appears on back button
+    window.addEventListener('popstate', setStyleOnLoc);
 
     return (
         <MainHeader headerStyle={headerStyle}>
