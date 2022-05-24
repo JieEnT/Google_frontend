@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
 
 import styled from 'styled-components'
@@ -20,10 +20,29 @@ const NavBar = () => {
 
     const [headerStyle, setHeaderStyle] = useState("main-header");
 
+    useEffect(() => {
+        switch(window.location.pathname){
+            case '/':
+                setHeaderStyle("main-header");
+                break;
+            case '/marketplace':
+                setHeaderStyle("main-header-two");
+                break;
+            case '/u1/dashboard':
+                setHeaderStyle("main-header");
+                break;
+            case '/u1/profile':
+                setHeaderStyle("main-header-two");
+                break;
+            default:
+                setHeaderStyle("main-header");
+        }
+    }, [window.location.pathname]);
+
     return (
         <MainHeader headerStyle={headerStyle}>
-                <h1 className = "main-navigation__title">
-                    <Link to="/">Pomona</Link>
+                <h1 className = "main-title">
+                    Pomona
                 </h1>
                 <Menu>
                     {/* Navlinks renders the different tabs */}
