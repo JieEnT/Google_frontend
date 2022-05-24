@@ -39,7 +39,6 @@ const App = () => {
 
   //Switch routes in accordance to whether it is logged in
   if(isLoggedIn){
-        {console.log("getting logged in")}
         routes = (
           <Routes>
             <Route path="/" element={<Intro/>} exact/>
@@ -53,7 +52,6 @@ const App = () => {
           </Routes>
         )
   }else{
-    {console.log("getting logged out")}
       routes = (
           <Routes>
             <Route path="/" element={<Intro/>} exact/>
