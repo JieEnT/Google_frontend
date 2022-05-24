@@ -16,7 +16,7 @@ const App = () => {
 
   const[isLoggedIn, setIsLoggedIn] = useState(false);
  
-  //Set session storage so that is is still logged in upon refresh
+  //Set session storage so that is is still logged in upon refresh (store state)
   useEffect(() => {
     setIsLoggedIn(JSON.parse(window.sessionStorage.getItem("isLoggedIn")));
   }, []);
