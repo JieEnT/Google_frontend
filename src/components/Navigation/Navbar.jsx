@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 
 import styled from 'styled-components'
 import NavLinks from './NavLinks';
@@ -19,7 +19,6 @@ const NavBar = () => {
 
     const [headerStyle, setHeaderStyle] = useState("main-header");
 
-    
     const setStyleOnLoc = () => {
             switch(window.location.pathname){
                 case '/':
@@ -38,6 +37,9 @@ const NavBar = () => {
                     setHeaderStyle("main-header");
             }
     }
+
+    //To set the navbar correctly on logout
+    useEffect( setStyleOnLoc );
 
     //So that the right navigation appears on back button
     window.addEventListener('popstate', setStyleOnLoc);
