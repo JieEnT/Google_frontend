@@ -1,10 +1,10 @@
-import React, {useState, useContext, useCallback} from 'react';
+import React, { useContext, useCallback} from 'react';
 import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
 
 import Backdrop from './Backdrop';
 import './LoginModal.css';
-import {AuthContext} from '../context/auth-context';
+import {AuthContext} from '../../context/auth-context';
 import { useNavigate } from 'react-router-dom';
 
 import Button from '@mui/material/Button';
@@ -47,7 +47,7 @@ const LoginForm = (props) => {
     props.onCancel();
     //Redirect back to dashboard
     nav("/u1/dashboard");
-  },[]);
+  },[auth, nav, props]);
 
   return(
         <Container component="main" maxWidth="xs">

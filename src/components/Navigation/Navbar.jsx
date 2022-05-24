@@ -1,10 +1,10 @@
-import React, {useContext, useState, useEffect} from 'react';
+import React, {useContext, useState} from 'react';
 
 import styled from 'styled-components'
 import NavLinks from './NavLinks';
 import MainHeader from './MainHeader';
-import Login from '../Login';
-import Logout from '../Logout';
+import Login from '../Registration/Login';
+import Logout from '../Registration/Logout';
 import {AuthContext} from "../../context/auth-context";
 
 import './Navbar.css';
@@ -38,9 +38,6 @@ const NavBar = () => {
                     setHeaderStyle("main-header");
             }
     }
-
-
-    useEffect( setStyleOnLoc , [window.location.pathname]);
 
     //So that the right navigation appears on back button
     window.addEventListener('popstate', setStyleOnLoc);

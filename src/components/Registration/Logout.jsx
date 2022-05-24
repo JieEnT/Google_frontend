@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
 
 import styled from 'styled-components'
-import { AuthContext } from '../context/auth-context';
+import { AuthContext } from '../../context/auth-context';
 import { useNavigate } from 'react-router-dom';
-
 const Button = styled.button`
     border: 2px solid white;
     padding: 10px 15px;
