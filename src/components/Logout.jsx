@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 
 import styled from 'styled-components'
 import { AuthContext } from '../context/auth-context';
+import { useNavigate } from 'react-router-dom';
 
 const Button = styled.button`
     border: 2px solid white;
@@ -17,8 +18,11 @@ const Button = styled.button`
 const Logout = props => {
     const auth = useContext(AuthContext);
 
+    const nav = useNavigate();
+
     const logOutOfAccount = () => {
         auth.logout();
+        nav("/");
     }
 
     return(

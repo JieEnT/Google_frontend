@@ -5,6 +5,7 @@ import { CSSTransition } from 'react-transition-group';
 import Backdrop from './Backdrop';
 import './LoginModal.css';
 import {AuthContext} from '../context/auth-context';
+import { useNavigate } from 'react-router-dom';
 
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
@@ -32,6 +33,7 @@ function Copyright(props) {
 
 const LoginForm = (props) => {
   const auth = useContext(AuthContext);
+  const nav = useNavigate();
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault();
@@ -43,6 +45,8 @@ const LoginForm = (props) => {
     auth.login();
     //To exit the modal after login
     props.onCancel();
+    //Redirect back to dashboard
+    nav("/u1/dashboard");
   },[]);
 
   return(
