@@ -6,7 +6,7 @@ import { Container, Tab, Box, Tabs } from '@mui/material';
 
 // Components
 import Iconify from './styling/Iconify'
-// import NotistackProvider from './styling/NotistackProvider';
+import NotistackProvider from './styling/NotistackProvider';
 
 // Sections
 import UserNewForm from './components/UpdateUserForm';
@@ -53,12 +53,12 @@ const Account = () => {
 
                 <Box sx={{ mb: 6 }} />
                 
-                <SnackbarProvider>
+                <NotistackProvider>
                     {ACCOUNT_TABS.map((tab) => {
                     const isMatched = tab.value === currentTab;
                     return isMatched && <Box key={tab.value}>{tab.component}</Box>;
                     })}
-                </SnackbarProvider>
+                </NotistackProvider>
             </Container>
         </Box>
     )
