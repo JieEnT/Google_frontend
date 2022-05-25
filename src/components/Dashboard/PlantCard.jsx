@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import Progress from './Progress'
 
 const Container = styled.div`
-    margin-right:50px;
-    padding: 20px;
-    width:140px;
-    height:200px;
+    margin-right:30px;
+    padding: 10px;
+    ${'' /* width:140px; */}
+    ${'' /* height:200px; */}
     -webkit-box-shadow: 0px 0px 17px -11px black;
     box-shadow: 0px 0px 15px -8px black;
     background-color:white;
@@ -37,7 +38,7 @@ const Image = styled.img`
   top:0px;
   margin-bottom:10px;
   background-color:#eeee;
-  padding:40px 35px;
+  padding:40px 45px;
   border-radius:15px;
 
   @media screen and (max-width: 1200px) {
@@ -54,19 +55,61 @@ const Title = styled.h1`
 const Desc = styled.p`
   width:90%;
   font-size:12px;
-  margin-top:3px;
+  margin-top:10px;
   text-align:center;
   color:black;
+  margin-bottom:5px;
 `;
 
-const PlantCard = ({image, title, desc, value}) => {
+const PlantCard = ({image, title, tokenvalue}) => {
+  const [level,setLevel] = useState(0);
+  const [value,setValue] = useState(0);
+  const [stagetitle, setStagetitle] = useState("No plants grown");
+  const [tokenValue, setTokenValue] = useState("");
+  useEffect(() => {
+    const interval = setInterval(() => {
+        setValue (oldValue => {
+            const newValue = oldValue + 10;
+
+            // if (newValue === 100) {
+            //     clearInterval(interval);
+            // }
+                return newValue;
+            });
+        },2000);
+    },[]);
+
+    useEffect(() => {
+        if (value >= 100) {
+            setLevel(level+1);
+            setValue(0);
+        }
+    },[value, level]);
+
+    useEffect(() => {
+      switch(level) {
+          case 0:
+              setStagetitle("No plants grown");
+              break;
+          case 1:
+              setStagetitle("Seedling Stage");
+              break;
+          case 2:
+              setStagetitle("Young Plant Stage");
+              break;
+          default:
+              setStagetitle("Fully Grown Stage");
+              setTokenValue(tokenvalue);
+      }
+  }, [level,tokenValue, tokenvalue]);
   return (
     <Container>
       <AboutContainer>
       <Image src= {image}></Image>
       <Title>{title}</Title>
-      <Desc>{desc}</Desc>
-      <Desc>{value}</Desc>
+      <Desc>{stagetitle} </Desc>
+      <Progress color={"darkblue"} width={"150px"} value={value} max={100}/>
+      <Desc>{ tokenValue }</Desc>
       </AboutContainer>
     </Container>
   )

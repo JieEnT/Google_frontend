@@ -13,52 +13,17 @@ const Container = styled.div`
     margin:auto;
 `;
 
-
-const Plants = ({level}) => {
-  switch(level) {
-    case 0:
+const Plants = () => {
       return(
       <Container>
-        <PlantCard image= {Kale} title="Kale" desc="0 NFTs"/>
-        <PlantCard image = {Tomato} title="Tomato" desc="0 NFTs"/>
-        <PlantCard image = {Cucumber} title="Cucumber" desc="0 NFTs" />
+        <PlantCard image= {Kale} title="Kale 1" tokenvalue="0.3/eth"/>
+        <PlantCard image = {Tomato} title="Tomato 1" tokenvalue="0.4/eth"/>
+        <PlantCard image = {Cucumber} title="Cucumber" tokenvalue="0.5/eth"/>
+        <PlantCard image= {Kale} title="Kale 2" tokenvalue="0.3/eth"/>
+        <PlantCard image = {Tomato} title="Tomato 2" tokenvalue="0.4/eth"/>
       </Container>
-      )
-    case 1:
-      return (
-      <Container>
-      <PlantCard image= {Kale} title="Kale" desc="0 NFTs"/>
-      <PlantCard image = {Tomato} title="Tomato" desc="1 NFTs"/>
-      <PlantCard image = {Cucumber} title="Cucumber" desc="3 NFTs"/>
-    </Container>
       );
-      case 2: 
-      return (
-        <Container>
-        <PlantCard image= {Kale} title="Kale" desc="3 NFTs"/>
-        <PlantCard image = {Tomato} title="Tomato" desc="0 NFTs"/>
-        <PlantCard image = {Cucumber} title="Cucumber" desc="2 NFTs"/>
-    </Container>
-      )
-      default:
-        return (
-        <Container>
-          <PlantCard image= {Kale} title="Kale" desc="1 NFTs" value="0.3/eth"/>
-          <PlantCard image = {Tomato} title="Tomato" desc="1 NFTs" value="0.3/eth"/>
-          <PlantCard image = {Cucumber} title="Cucumber" desc="1 NFTs" value="0.3/eth"/>
-      </Container>
-
-        );
 
   }
-  // return (
-  //   <Container>
-  //     <PlantCard image= {Kale} title="Kale" desc="Brassica oleracea var. sabellica"/>
-  //     <PlantCard image = {Tomato} title="Tomato" desc="Solanum lycopersicum"/>
-  //     <PlantCard image = {Cucumber} title="Cucumber" desc="Cucumis sativus"/>
-  //   </Container>
-    
-  // );
-}
 
 export default Plants
