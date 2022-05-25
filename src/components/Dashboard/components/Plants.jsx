@@ -1,6 +1,9 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
+import { Grid } from '@mui/material';
+
 import PlantCard from './PlantCard';
+
 import { vegetables } from '../_mock/_mockVeg';
 
 const Container = styled.div`
@@ -13,14 +16,16 @@ const Container = styled.div`
 
 const Plants = () => {
       return(
-      <Container>
-        {
-          vegetables.map(vege => (
-              <PlantCard image= {vege.image} title={vege.title} tokenvalue={vege.tokenvalue}/>
-        ))}
-      </Container>
+        <Grid container>
+            {
+              vegetables.map(vege => (
+                  <PlantCard image= {vege.image} title={vege.title} tokenvalue={vege.tokenvalue}/>
+            ))}
+        </Grid>
       );
 
   }
+
+
 
 export default Plants

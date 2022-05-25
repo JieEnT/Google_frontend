@@ -9,12 +9,11 @@ import Background from './assets/dashboardbg.jpg';
 import NFTs from './components/NFTs';
 
 const Container = styled.div`
-    height:100vh;
+    height:100%;
     display:flex;
     flex-direction:column;
     background-image: url(${Background});
     background-size:cover;
-    overflow:hidden;
     margin:auto;
     ${'' /* background-color:rgba(26, 58, 122); */}
 `;

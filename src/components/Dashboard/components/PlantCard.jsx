@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Grid } from '@mui/material';
 import styled from 'styled-components'
 import Progress from './Progress'
 
@@ -107,15 +108,17 @@ const PlantCard = ({image, title, tokenvalue}) => {
       }
   }, [level,tokenValue, tokenvalue]);
   return (
-    <Container>
-      <AboutContainer>
-      <Image src= {image}></Image>
-      <Title>{title}</Title>
-      <Desc>{stagetitle} </Desc>
-      <Progress color={"darkblue"} width={"150px"} value={value} max={100}/>
-      <Desc>{ tokenValue }</Desc>
-      </AboutContainer>
-    </Container>
+    <Grid item xs={12} sm={6} md={3}>
+        <Container>
+            <AboutContainer>
+            <Image src= {image}></Image>
+            <Title>{title}</Title>
+            <Desc>{stagetitle} </Desc>
+            <Progress color={"darkblue"} width={"150px"} value={value} max={100}/>
+            <Desc>{ tokenValue }</Desc>
+            </AboutContainer>
+        </Container>
+    </Grid>
   )
 }
 export default PlantCard
