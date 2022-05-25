@@ -6,8 +6,21 @@ import MainHeader from './MainHeader';
 import Login from '../Registration/Login';
 import Logout from '../Registration/Logout';
 import {AuthContext} from "../../context/auth-context";
+import { useMoralis, useMoralisWeb3ApiCall, useMoralisWeb3Api } from "react-moralis";
+
 
 import './Navbar.css';
+
+const Button = styled.button`
+    border: 2px solid white;
+    padding: 10px 15px;
+    background-color:white;
+    color:darkblue;
+    font-weight:bold;
+    border-radius:10px;
+    cursor:pointer;
+    margin-right:60px;
+`;
 
 const Menu = styled.ul`
     display:flex;
@@ -16,6 +29,8 @@ const Menu = styled.ul`
 
 const NavBar = () => {
     const auth = useContext(AuthContext);
+    const { authenticate, isAuthenticated, user , logout } = useMoralis();
+
 
     const [headerStyle, setHeaderStyle] = useState("main-header");
 
@@ -38,6 +53,11 @@ const NavBar = () => {
             }
     }
 
+    const logOutMoralis = async () => {
+        await logout();
+        console.log("logged out");
+      }
+
     //To set the navbar correctly on logout
     useEffect( setStyleOnLoc );
 
@@ -53,8 +73,11 @@ const NavBar = () => {
                     {/* Navlinks renders the different tabs */}
                     <NavLinks setHeaderStyle={setHeaderStyle}/>
                 </Menu>
+                {!isAuthenticated && <Button onClick={() => authenticate()}> Connect Wallet   </Button>}
+                {isAuthenticated && <Button onClick={() => logOutMoralis()}> Disconnect Wallet   </Button>}
                 {!auth.isLoggedIn && <Login/>}
                 {auth.isLoggedIn && <Logout/>}
+
         </MainHeader>
     );
 };
