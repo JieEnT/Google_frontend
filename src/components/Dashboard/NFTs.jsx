@@ -50,26 +50,24 @@ const NFTs = () => {
         console.log(NFTdata);
      };
 
-    // for the button to sell after they are fully grown (i will update this later idk what the functions do)
-    const createSellOrder = async () => {
+     const createSellOrder = async () => {
       const expirationTime = Math.round(Date.now() / 1000 + 60 * 60 * 24);
-      const startAmount = 1;
-      const endAmount = 1;
+      const startAmount = 0.001; //price that will be listed on opensea
+      const endAmount = 0.001; //start == endprice
   
       await Moralis.Plugins.opensea.createSellOrder({
         network: "testnet",
-        tokenAddress: "0xBc4595D6d8Cc28C3f611f3B9d778270935e9C8a1",
+        tokenAddress: "0xBc4595D6d8Cc28C3f611f3B9d778270935e9C8a1", 
         tokenId: "1",
         tokenType: "ERC1155",
-        userAddress: "0xc781fcD8187c42416301F00Db636745daD0BA7FB",
+        userAddress: "0xc781fcD8187c42416301F00Db636745daD0BA7FB", // ** NEED TO CHANGE TO YOUR OWN ADDRESS AND THAT U MUST OWN SOME AMT OF KALE **
         startAmount,
         endAmount,
-        expirationTime: startAmount > endAmount && expirationTime, // Only set if you startAmount > endAmount
+        // expirationTime: startAmount > endAmount && expirationTime, // Only set if you startAmount > endAmount
       });
   
       console.log("Create Sell Order Successful");
     };
-
 
     // initialise the data when the page loads
 
@@ -90,6 +88,8 @@ const NFTs = () => {
     <Container>
       {/* to print out the specific NFT data FROM OPENSEA */}
       <Button onClick={getAsset}>Get Asset</Button>
+      {/* CLICK TO SELL KALE HARDCODED KALE ADDRESS & USER ACCT TOKEN  INSIDE FUNCTION */}
+      <Button onClick={createSellOrder}>Create Sell Order</Button>
 
       {/* { NFTbalance != null  && NFTbalance.result.map((token) => NFTCard( Moralis.Plugins.opensea.getAsset({
           network: "testnet",
