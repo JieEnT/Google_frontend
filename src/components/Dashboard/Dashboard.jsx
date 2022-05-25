@@ -6,6 +6,7 @@ import NextHarvest from './NextHarvest'
 import NoVege from './NoVege'
 import Nursery from './Nursery'
 import Background from './dashboardbg.jpg';
+import NFTs from './NFTs';
 
 const Container = styled.div`
     height:100vh;
@@ -33,6 +34,7 @@ const Dashboard = () => {
       <NoVege/>
     </AboutContainer>
       <Nursery/>
+      <NFTs/>
     </Container>
   );
 }
