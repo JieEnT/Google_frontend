@@ -94,10 +94,10 @@ const NFTs = () => {
         //post user data
         axios({
           method: 'post',
-          url: baseURL + '/user',
+          url: baseURL + '/api/auth-user',
           data: {
             ethAddress: user.attributes.ethAddress,
-            lifetimeEarnings: '4.1298',
+            lifetimeEarnings: 374,
             inventory: null,
           }
         });
