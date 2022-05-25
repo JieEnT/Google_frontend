@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Dollar from '../assets/dollar.jpg'
+
 const Container = styled.div`
     margin-left:100px;
     padding: 20px;

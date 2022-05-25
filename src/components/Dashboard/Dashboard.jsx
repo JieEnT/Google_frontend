@@ -1,12 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
+
+// Components
 import Earnings from './components/Earnings'
 import WalletCard from './components/WalletCard'
 import NextHarvest from './components/NextHarvest'
 import NoVege from './components/NoVege'
 import Nursery from './components/Nursery'
-import Background from './assets/dashboardbg.jpg';
 import NFTs from './components/NFTs';
+
+// Assets
+import Background from './assets/dashboardbg.jpg';
 
 const Container = styled.div`
     height:100%;

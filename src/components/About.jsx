@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+
 import AboutCard from './AboutCard';
+
 import DigitalToken from '../assets/digitaltoken.jpg'
 import Vegetable from '../assets/farming.jpg'
 import Earning from '../assets/11229.jpg'

@@ -4,8 +4,6 @@ import { Grid } from '@mui/material';
 
 import PlantCard from './PlantCard';
 
-import { vegetables } from '../_mock/_mockVeg';
-
 const Container = styled.div`
     height:100%;
     display:flex;
@@ -14,11 +12,11 @@ const Container = styled.div`
     margin:auto;
 `;
 
-const Plants = () => {
+const Plants = ({filteredSearchResults}) => {
       return(
         <Grid container>
             {
-              vegetables.map(vege => (
+              filteredSearchResults.map(vege => (
                   <PlantCard image= {vege.image} title={vege.title} tokenvalue={vege.tokenvalue}/>
             ))}
         </Grid>

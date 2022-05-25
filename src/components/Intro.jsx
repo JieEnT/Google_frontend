@@ -1,7 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import Background from '../assets/parallax-bg.gif';
+
 import About from './About'
+
+import Background from '../assets/parallax-bg.gif';
+
 
 const WrapperContainer = styled.div`
   height:100vh;
