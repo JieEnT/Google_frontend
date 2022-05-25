@@ -3,11 +3,6 @@ import styled from 'styled-components'
 import PlantCard from './PlantCard';
 import { vegetables } from '../_mock/_mockVeg';
 
-import Kale from '../assets/kale.png'
-import Tomato from '../assets/tomato.png'
-import Cucumber from '../assets/cucumber.png'
-
-
 const Container = styled.div`
     height:100%;
     display:flex;
