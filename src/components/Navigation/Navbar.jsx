@@ -19,7 +19,9 @@ const Button = styled.button`
     font-weight:bold;
     border-radius:10px;
     cursor:pointer;
-    margin-right:60px;
+    margin-right:10px;
+    ${'' /* position:relative;
+    left:180px; */}
 `;
 
 const Menu = styled.ul`
@@ -73,11 +75,12 @@ const NavBar = () => {
                     {/* Navlinks renders the different tabs */}
                     <NavLinks setHeaderStyle={setHeaderStyle}/>
                 </Menu>
+                <Menu>
                 {!isAuthenticated && <Button onClick={() => authenticate()}> Connect Wallet   </Button>}
                 {isAuthenticated && <Button onClick={() => logOutMoralis()}> Disconnect Wallet   </Button>}
-                {!auth.isLoggedIn && <Login/>}
-                {auth.isLoggedIn && <Logout/>}
-
+                {!auth.isLoggedIn && <Login />}
+                {auth.isLoggedIn && <Logout />}
+                </Menu>
         </MainHeader>
     );
 };
