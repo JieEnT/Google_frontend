@@ -16,7 +16,7 @@ const Img = styled('img')({
 
 const NFTCard = (token)  => {
 
-    console.log(NFTData);
+    // console.log(NFTData);
     const { Moralis } = useMoralis();
   
     //get specific nft detail

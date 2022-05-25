@@ -76,8 +76,8 @@ const NavBar = () => {
                     <NavLinks setHeaderStyle={setHeaderStyle}/>
                 </Menu>
                 <Menu>
-                {!isAuthenticated && <Button onClick={() => authenticate()}> Connect Wallet   </Button>}
-                {isAuthenticated && <Button onClick={() => logOutMoralis()}> Disconnect Wallet   </Button>}
+                {auth.isLoggedIn && !isAuthenticated && <Button onClick={() => authenticate()}> Connect Wallet   </Button>}
+                {auth.isLoggedIn && isAuthenticated && <Button onClick={() => logOutMoralis()}> Disconnect Wallet   </Button>}
                 {!auth.isLoggedIn && <Login />}
                 {auth.isLoggedIn && <Logout />}
                 </Menu>
