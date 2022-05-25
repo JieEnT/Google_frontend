@@ -74,6 +74,9 @@ const PlantCard = ({image, title, tokenvalue}) => {
             // if (newValue === 100) {
             //     clearInterval(interval);
             // }
+            // if (level === 3) {
+            //   clearInterval(interval);
+            // }
                 return newValue;
             });
         },2000);
@@ -100,6 +103,7 @@ const PlantCard = ({image, title, tokenvalue}) => {
           default:
               setStagetitle("Fully Grown Stage");
               setTokenValue(tokenvalue);
+              setValue(100);
       }
   }, [level,tokenValue, tokenvalue]);
   return (

@@ -9,7 +9,7 @@ import Plants from './Plants'
 
 const Container = styled.div`
     margin:20px 100px;
-    padding: 10px;
+    padding: 20px;
     ${'' /* height:400px; */}
     -webkit-box-shadow: 0px 0px 17px -11px black;
     box-shadow: 0px 0px 15px -8px black;
