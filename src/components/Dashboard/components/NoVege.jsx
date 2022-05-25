@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Vege from './organic-food.png';
+import Vege from '../assets/organic-food.png';
 
 const Container = styled.div`
     margin-right:100px;

@@ -12,8 +12,6 @@ import styled from "styled-components";
 import NFTCard from "./NFTCard";
 
 
-
-
 const Container = styled.div`
   margin: 20px 100px;
   padding: 10px;
