@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { capitalCase } from 'change-case';
-import { SnackbarProvider } from "notistack";
+import styled from 'styled-components'
 
 import { Container, Tab, Box, Tabs } from '@mui/material';
 
@@ -13,6 +13,15 @@ import UserNewForm from './components/UpdateUserForm';
 import AccountChangePassword from './components/AccountChangePassword';
 import AccountSocialLinks from './components/AccountSocialLinks';
 import { _userAbout } from './components/_mock/_userAbout';
+
+//Background image
+//import Background from '../../assets/cloudlandscape.png';
+
+const MyContainer = styled.div`
+    height:90vh;
+    overflow:hidden;
+    background-color:#eeeeee;
+`;
 
 const Account = () => {
     const [currentTab, setCurrentTab] = useState('general');
@@ -36,8 +45,8 @@ const Account = () => {
     ];
 
     return(
-        <Box pt={2} pb={4}>
-            <Container maxWidth='lg'>
+        <MyContainer>
+            <Container maxWidth='lg' sx={{ mt: 1 }}>
 
                 <Tabs
                 value={currentTab}
@@ -51,7 +60,7 @@ const Account = () => {
                 ))}
                 </Tabs>
 
-                <Box sx={{ mb: 6 }} />
+                <Box sx={{ mb: 2 }} />
                 
                 <NotistackProvider>
                     {ACCOUNT_TABS.map((tab) => {
@@ -60,7 +69,7 @@ const Account = () => {
                     })}
                 </NotistackProvider>
             </Container>
-        </Box>
+        </MyContainer>
     )
 }
 
