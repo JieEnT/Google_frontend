@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import EmptyNursery from './empty_nursery.jpg'
-import Stage1 from './stage1.jpg'
-import Stage2 from './stage2.jpg'
-import FullNursery from './fullnursery.jpg'
+import EmptyNursery from '../assets/empty_nursery.jpg'
+import Stage1 from '../assets/stage1.jpg'
+import Stage2 from '../assets/stage2.jpg'
+import FullNursery from '../assets/fullnursery.jpg'
 import Progress from './Progress'
 import Plants from './Plants'
 

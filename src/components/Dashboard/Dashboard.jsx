@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import Earnings from './Earnings'
-import WalletCard from './WalletCard'
-import NextHarvest from './NextHarvest'
-import NoVege from './NoVege'
-import Nursery from './Nursery'
-import Background from './dashboardbg.jpg';
-import NFTs from './NFTs';
+import Earnings from './components/Earnings'
+import WalletCard from './components/WalletCard'
+import NextHarvest from './components/NextHarvest'
+import NoVege from './components/NoVege'
+import Nursery from './components/Nursery'
+import Background from './assets/dashboardbg.jpg';
+import NFTs from './components/NFTs';
 
 const Container = styled.div`
     height:100vh;

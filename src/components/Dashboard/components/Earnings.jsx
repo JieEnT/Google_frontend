@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import Harvest from './carrot.png'
-
+import Dollar from '../assets/dollar.jpg'
 const Container = styled.div`
+    margin-left:100px;
     padding: 20px;
     width:260px;
     height:100px;
@@ -24,10 +24,8 @@ const AboutContainer = styled.div`
     flex-direction:column;
     align-items:left;
     justify-content:center;
-    margin-left:30px;
 `;
 const Title = styled.h1`
-  margin-top:10px;
   font-size:15px;
   color:darkgrey;
   text-align:left;
@@ -38,7 +36,7 @@ const Title = styled.h1`
 `;
 
 const Desc = styled.p`
-  width:90%;
+  width:100%;
   font-size:15px;
   margin-top:10px;
   text-align:left;
@@ -48,29 +46,22 @@ const Desc = styled.p`
         font-size:13px;
     }
 `;
-
 const Image = styled.img`
-  width:25%;
-  height:70px;
+  width:40%;
+  height:100px;
   position:relative;
-  margin-top:20px;
+  margin-top:5px;
   margin-bottom:50px;
-  margin-left:20px;
-
-  @media screen and (max-width: 1200px) {
-        margin-left:5px;
-    }
 `;
-
-const NextHarvest = () => {
+const Earnings = () => {
   return (
     <Container>
-        <Image src= {Harvest}></Image>
+      <Image src= {Dollar}></Image>
       <AboutContainer>
-      <Title>Estimated time to next harvest</Title>
-      <Desc> (Insert time here)</Desc>
+      <Title>Earnings</Title>
+      <Desc> $ (insert earnings)</Desc>
       </AboutContainer>
     </Container>
   )
 }
-export default NextHarvest
+export default Earnings

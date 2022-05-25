@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import {ethers} from 'ethers';
-import Account from './wallet.png';
+import Account from '../assets/wallet.png';
 
 const Container = styled.div`
     padding:20px;
