@@ -1,4 +1,4 @@
-import React, { useEffect  } from "react";
+import React, { useEffect, useState  } from "react";
 import {Button } from "@mui/material";
 import axios from "axios";
 
@@ -32,7 +32,13 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-
+const Title = styled.h1`
+  font-size:30px;
+  color:black;
+  text-align:center;
+  margin-bottom:25px;
+  margin-top:5px;
+`;
 
 const NFTs = () => {
     
@@ -55,9 +61,10 @@ const NFTs = () => {
 
         });
         console.log(NFTdata);
+        console.log(getNFTBalances);
      };
 
-     const createSellOrder = async () => {
+      const createSellOrder = async () => {
       const expirationTime = Math.round(Date.now() / 1000 + 60 * 60 * 24);
       const startAmount = 0.001; //price that will be listed on opensea
       const endAmount = 0.001; //start == endprice
@@ -82,9 +89,8 @@ const NFTs = () => {
       if(isInitialized){
         Moralis.initPlugins();
         Moralis.enableWeb3();
-        getNFTBalances({ params: { chain: "rinkeby" } });
       }
-    },[Moralis, getNFTBalances, isInitialized]);
+    },[Moralis, isInitialized] );
 
     const postUserDets = async () => {
         getNativeTransations({ params: { chain: "rinkeby" } });
@@ -131,11 +137,29 @@ const NFTs = () => {
       });
       // console.log(NFTdata);
     };
+    const [NFTbal, setNFTbal] = useState();
+ 
+
+    const getNFTBal = async () => {
+      getNFTBalances({ params: { chain: "rinkeby" } });
+      if (NFTbalance != null) {
+        console.log(NFTbalance);
+        console.log(NFTbalance.result.length);
+      } else {
+        console.log("fk u");
+      }
+
+    };
+
+    useEffect(() => {
+      getNFTBal();
+     
+    },[]) ;
 
     
-
+    ////getNFTBalances({ params: { chain: "rinkeby" } });
     //print out the NFTs under this account
-    // console.log(NFTbalance);
+    //console.log(NFTbalance);
 
 
   return (
@@ -149,13 +173,15 @@ const NFTs = () => {
       {/* CLICK TO SELL KALE HARDCODED KALE ADDRESS & USER ACCT TOKEN  INSIDE FUNCTION */}
       <Button onClick={postNFT}>Post KALE NFT dets</Button>
 
+      {/* <Button onClick={getNFTBal}> Get Bal </Button> */}
+
+
 
       {/* { NFTbalance != null  && NFTbalance.result.map((token) => NFTCard( Moralis.Plugins.opensea.getAsset({
           network: "testnet",
           tokenAddress: token.token_address,
           tokenId: token.token_id,
         }) , token))} */}
-
     </Container>
   );
 };

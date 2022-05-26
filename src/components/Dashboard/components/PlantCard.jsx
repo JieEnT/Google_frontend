@@ -5,7 +5,7 @@ import Progress from './Progress'
 
 const Container = styled.div`
     padding: 0px 0px;
-    width:180px;
+    width:190px;
     ${'' /* height:200px; */}
     ${'' /* -webkit-box-shadow: 0px 0px 17px -11px black;
     box-shadow: 0px 0px 15px -8px black; */}
@@ -37,9 +37,9 @@ const Image = styled.img`
   width:70px;
   height:60px;
   position:relative;
-  margin-bottom:10px;
+  margin-bottom:5px;
   background-color:#bbe6b8;
-  padding:40px 55px;
+  padding:45px 60px;
   border-radius:15px 15px 0px 0px;
 
   @media screen and (max-width: 1200px) {
