@@ -141,19 +141,34 @@ const WalletCard = () => {
     // window.ethereum.on('chainChanged',chainChangedHandler);
 
     return (
-        <Container>
-        <Image src= {Account}></Image>
-        <AboutContainer>
-        {/* <Title>Account Address</Title> */}
+    //     <Container>
+    //     <Image src= {Account}></Image>
+    //     <AboutContainer>
+    //     {/* <Title>Account Address</Title> */}
 
-        <Title>Current Account Balance</Title>
-        <Desc> $ {userBalance}</Desc>
-        {!isMetaMaskInstalled() && <Desc> download metamask! </Desc>}
-        { isMetaMaskInstalled() && <Button onClick={connectWalletHandler}>{connButtonText}</Button> }
-        {/* <Desc>{defaultAccount}</Desc> */}
-        {errorMessage}
-        </AboutContainer>
-      </Container>  
+    //     <Title>Current Account Balance</Title>
+    //     <Desc> $ {userBalance}</Desc>
+    //     {!isMetaMaskInstalled() && <Desc> download metamask! </Desc>}
+    //     { isMetaMaskInstalled() && <Button onClick={connectWalletHandler}>{connButtonText}</Button> }
+    //     {/* <Desc>{defaultAccount}</Desc> */}
+    //     {errorMessage}
+    //     </AboutContainer>
+    //   </Container>  
+    <Card style={cardStyle}>
+      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+        <CardMedia
+          component="img"
+          sx={{ width: 85 }}
+          image={Account}
+          alt="Live from space album cover"
+        />
+        
+      </Box>
+      <CardContent sx={{ flex: '0 1 auto' }}>
+          <Title>Current Account Balance</Title>
+          <Desc> $ (insert data)</Desc>
+        </CardContent>
+    </Card>
     )
 }
 export default WalletCard

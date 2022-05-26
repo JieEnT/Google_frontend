@@ -67,7 +67,7 @@ const NextHarvest = () => {
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardMedia
           component="img"
-          sx={{ width: 100 }}
+          sx={{ width: 85 }}
           image={Harvest}
           alt="Live from space album cover"
         />
