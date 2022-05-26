@@ -29,8 +29,8 @@ const AboutContainer = styled.div`
     flex-direction:column;
     align-items:left;
     justify-content:center;
-    margin-left:30px;
 `;
+
 const Title = styled.h1`
   font-size:15px;
   color:darkgrey;
@@ -39,10 +39,10 @@ const Title = styled.h1`
   @media screen and (max-width: 1200px) {
         font-size:13px;
     }
-
 `;
 
 const Desc = styled.p`
+  width:100%;
   font-size:15px;
   margin-top:10px;
   text-align:left;
@@ -53,34 +53,11 @@ const Desc = styled.p`
     }
 `;
 const Image = styled.img`
-  width:25%;
-  height:70px;
+  width:40%;
+  height:100px;
   position:relative;
-  margin-top:20px;
+  margin-top:5px;
   margin-bottom:50px;
-  margin-left:20px;
-
-  @media screen and (max-width: 1200px) {
-        margin-left:5px;
-    }
-`;
-
-const Button = styled.button`
-  padding:7px;
-  width:120px;
-  background-color:rgba(26, 58, 122);
-  color:white;
-  border-radius:15px;
-  font-weight:bold;
-  border:none;
-  cursor:pointer;
-  position:relative;
-  top:12px;
-
-  @media screen and (max-width: 1200px) {
-        width:110px;
-        font-size:12px;
-    }
 `;
 
 const WalletCard = () => {
