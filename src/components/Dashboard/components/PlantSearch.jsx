@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 //import the mock data to display
-import { Grid } from '@mui/material';
-import { TextField, InputAdornment } from '@mui/material';
+import { Box, TextField, InputAdornment } from '@mui/material';
 
 import Iconify from '../styling/Iconify';
 
@@ -41,14 +40,24 @@ export default function PlantSearch({ initialData, filterSearch }) {
   }, [title, filterSearch, initialData]);
 
   return (
-    <Grid container>
-      <Grid item xs={12} mr={5} ml={0} mb={4} mt={2}>
+      <Box sx={{
+        width: {
+          xs: 200, // theme.breakpoints.up('xs')
+          sm: 300, // theme.breakpoints.up('sm')
+          md: 600, // theme.breakpoints.up('md')
+          lg: 700, // theme.breakpoints.up('lg')
+          xl: 900, // theme.breakpoints.up('xl')
+        },
+        mt: 1,
+        mb: 4,
+      }}>
         <TextField
           label="Search for your plant NFT"
           id="fullWidth"
           fullWidth
           value={title}
           onChange={handleTitleChange}
+          variant = "filled"
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
@@ -57,7 +66,6 @@ export default function PlantSearch({ initialData, filterSearch }) {
             ),
           }}
         />
-      </Grid>
-    </Grid>
+      </Box>
   );
 }

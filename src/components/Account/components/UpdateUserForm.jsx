@@ -34,7 +34,7 @@ export default function UpdateUserForm() {
     state: 'Singapore',
     city: 'Singapore',
     zipCode: '51234',
-    about: 'I love Google cloud. <3',
+    about: 'I love Google Cloud. <3',
     isPublic: '',
   };
 
