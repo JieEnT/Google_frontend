@@ -38,11 +38,11 @@ export default function PlantSearch({ initialData, filterSearch }) {
     return () => {
       clearTimeout(timeoutId);
     };
-  }, [title]);
+  }, [title, filterSearch, initialData]);
 
   return (
     <Grid container>
-      <Grid item xs={12} mr={5}>
+      <Grid item xs={12} mr={5} ml={0} mb={4} mt={2}>
         <TextField
           label="Search for your plant NFT"
           id="fullWidth"

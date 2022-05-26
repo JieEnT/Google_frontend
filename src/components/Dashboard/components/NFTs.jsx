@@ -81,9 +81,10 @@ const NFTs = () => {
     useEffect (() => {
       if(isInitialized){
         Moralis.initPlugins();
+        Moralis.enableWeb3();
         getNFTBalances({ params: { chain: "rinkeby" } });
       }
-    },[]);
+    },[Moralis, getNFTBalances, isInitialized]);
 
     const postUserDets = async () => {
         getNativeTransations({ params: { chain: "rinkeby" } });
