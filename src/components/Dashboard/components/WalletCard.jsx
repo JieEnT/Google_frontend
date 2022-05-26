@@ -1,24 +1,28 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import {ethers} from 'ethers';
+import { Card, Box, CardContent, CardMedia } from '@mui/material';
 import Account from '../assets/wallet.png';
 
-const Container = styled.div`
-    padding:20px;
-    width:260px;
-    height:100px;
-    -webkit-box-shadow: 0px 0px 17px -11px black;
-    box-shadow: 0px 0px 15px -8px black;
-    background-color:white;
-    border-radius:10px;
-    display:flex;
-    align-items:left;
+// const Container = styled.div`
+//     padding:20px;
+//     margin: 0px 20px;
+//     width:260px;
+//     height:100px;
+//     -webkit-box-shadow: 0px 0px 17px -11px black;
+//     box-shadow: 0px 0px 15px -8px black;
+//     background-color:white;
+//     border-radius:10px;
+//     display:flex;
+//     align-items:left;
+// `;
 
-    @media screen and (max-width: 1200px) {
-        width:200px;
-        height:100px;
-    }
-`;
+const cardStyle = {
+    padding: "20px",
+    width:"260px",
+    height:"100px",
+    display:"flex",
+}
 
 const AboutContainer = styled.div`
     display:flex;
@@ -127,18 +131,34 @@ const WalletCard = () => {
     window.ethereum.on('chainChanged',chainChangedHandler);
 
     return (
-        <Container>
-        <Image src= {Account}></Image>
-        <AboutContainer>
-        {/* <Title>Account Address</Title> */}
+        <Card style={cardStyle}>
+            <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                <CardMedia
+                component="img"
+                sx={{ width: 100 }}
+                image={Account}
+                alt="Live from space album cover"
+                />
+                
+            </Box>
+            <CardContent sx={{ flex: '0 1 auto' }}>
+                <Title>Current Account Balance</Title>
+                <Desc> $ {userBalance}</Desc>
+                {/* <Button onClick={connectWalletHandler}>{connButtonText}</Button> */}
+            </CardContent>
+        </Card>
+    //     <Container>
+    //     <Image src= {Account}></Image>
+    //     <AboutContainer>
+    //     {/* <Title>Account Address</Title> */}
 
-        <Title>Current Account Balance</Title>
-        <Desc> $ {userBalance}</Desc>
-        <Button onClick={connectWalletHandler}>{connButtonText}</Button>
-        {/* <Desc>{defaultAccount}</Desc> */}
-        {errorMessage}
-        </AboutContainer>
-      </Container>  
+    //     <Title>Current Account Balance</Title>
+    //     <Desc> $ {userBalance}</Desc>
+    //     <Button onClick={connectWalletHandler}>{connButtonText}</Button>
+    //     {/* <Desc>{defaultAccount}</Desc> */}
+    //     {errorMessage}
+    //     </AboutContainer>
+    //   </Container>  
     )
 }
 export default WalletCard
