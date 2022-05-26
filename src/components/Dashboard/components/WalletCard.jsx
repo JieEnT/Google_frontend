@@ -108,6 +108,8 @@ const WalletCard = () => {
         getAccountBalance(newAccount.toString());
     }
 
+    
+
     const getAccountBalance = (account) => {
         window.ethereum.request({method: 'eth_getBalance', params: [account, 'latest']})
         .then(balance => {
@@ -122,9 +124,17 @@ const WalletCard = () => {
         window.location.reload();
     }
 
-    //listen for account changes
-    window.ethereum.on('accountsChanged',accountChangedHandler);
-    window.ethereum.on('chainChanged',chainChangedHandler);
+    
+    //Created check function to see if the MetaMask extension is installed
+    const isMetaMaskInstalled = () => {
+        //Have to check the ethereum binding on the window object to see if it's installed
+        const { ethereum } = window;
+        return Boolean(ethereum && ethereum.isMetaMask);
+    };
+
+    // //listen for account changes
+    // window.ethereum.on('accountsChanged',accountChangedHandler);
+    // window.ethereum.on('chainChanged',chainChangedHandler);
 
     return (
         <Container>
@@ -134,7 +144,8 @@ const WalletCard = () => {
 
         <Title>Current Account Balance</Title>
         <Desc> $ {userBalance}</Desc>
-        <Button onClick={connectWalletHandler}>{connButtonText}</Button>
+        {!isMetaMaskInstalled() && <Desc> download metamask! </Desc>}
+        { isMetaMaskInstalled() && <Button onClick={connectWalletHandler}>{connButtonText}</Button> }
         {/* <Desc>{defaultAccount}</Desc> */}
         {errorMessage}
         </AboutContainer>
