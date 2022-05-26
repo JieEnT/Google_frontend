@@ -1,24 +1,27 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Card, Box, CardContent, CardMedia } from '@mui/material';
 import Vege from '../assets/organic-food.png';
 
-const Container = styled.div`
-    margin-right:100px;
-    padding: 20px;
-    width:260px;
-    height:100px;
-    -webkit-box-shadow: 0px 0px 17px -11px black;
-    box-shadow: 0px 0px 15px -8px black;
-    background-color:white;
-    border-radius:10px;
-    display:flex;
-    align-items:left;
+// const Container = styled.div`
+//     padding: 20px;
+//     margin: 0px 20px;
+//     width:260px;
+//     height:100px;
+//     -webkit-box-shadow: 0px 0px 17px -11px black;
+//     box-shadow: 0px 0px 15px -8px black;
+//     background-color:white;
+//     border-radius:10px;
+//     display:flex;
+//     align-items:left;
+// `;
 
-    @media screen and (max-width: 1200px) {
-        width:200px;
-        height:100px;
-    }
-`;
+const cardStyle = {
+    padding: "20px",
+    width:"260px",
+    height:"100px",
+    display:"flex",
+}
 
 const AboutContainer = styled.div`
     display:flex;
@@ -65,13 +68,28 @@ const Image = styled.img`
 
 const NoVege = () => {
   return (
-    <Container>
-         <Image src= {Vege}></Image>
-      <AboutContainer>
-      <Title>Number of vegetables invested</Title>
-      <Desc> (number here)</Desc>
-      </AboutContainer>
-    </Container>
+    <Card style={cardStyle}>
+      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+        <CardMedia
+          component="img"
+          sx={{ width: 100 }}
+          image={Vege}
+          alt="Live from space album cover"
+        />
+        
+      </Box>
+      <CardContent sx={{ flex: '0 1 auto' }}>
+          <Title>Number of vegetables invested</Title>
+         <Desc> (number here)</Desc>
+      </CardContent>
+    </Card>
+    // <Container>
+    //      <Image src= {Vege}></Image>
+    //   <AboutContainer>
+    //   <Title>Number of vegetables invested</Title>
+    //   <Desc> (number here)</Desc>
+    //   </AboutContainer>
+    // </Container>
   )
 }
 export default NoVege

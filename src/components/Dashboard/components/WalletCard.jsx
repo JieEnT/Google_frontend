@@ -1,24 +1,28 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import {ethers} from 'ethers';
+import { Card, Box, CardContent, CardMedia } from '@mui/material';
 import Account from '../assets/wallet.png';
 
-const Container = styled.div`
-    padding:20px;
-    width:260px;
-    height:100px;
-    -webkit-box-shadow: 0px 0px 17px -11px black;
-    box-shadow: 0px 0px 15px -8px black;
-    background-color:white;
-    border-radius:10px;
-    display:flex;
-    align-items:left;
+// const Container = styled.div`
+//     padding:20px;
+//     margin: 0px 20px;
+//     width:260px;
+//     height:100px;
+//     -webkit-box-shadow: 0px 0px 17px -11px black;
+//     box-shadow: 0px 0px 15px -8px black;
+//     background-color:white;
+//     border-radius:10px;
+//     display:flex;
+//     align-items:left;
+// `;
 
-    @media screen and (max-width: 1200px) {
-        width:200px;
-        height:100px;
-    }
-`;
+const cardStyle = {
+    padding: "20px",
+    width:"260px",
+    height:"100px",
+    display:"flex",
+}
 
 const AboutContainer = styled.div`
     display:flex;
