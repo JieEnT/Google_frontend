@@ -34,6 +34,7 @@ const App = () => {
     setIsLoggedIn(false);
   }, []);
 
+  
 
   // Creation of routes
   let routes;

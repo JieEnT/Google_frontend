@@ -1,24 +1,26 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Card, Box, CardContent, CardMedia } from '@mui/material';
 import Dollar from '../assets/dollar.jpg'
 
-const Container = styled.div`
-    margin-left:100px;
-    padding: 20px;
-    width:260px;
-    height:100px;
-    -webkit-box-shadow: 0px 0px 17px -11px black;
-    box-shadow: 0px 0px 15px -8px black;
-    background-color:white;
-    border-radius:10px;
-    display:flex;
-    align-items:left;
+// const Container = styled.div`
+//     padding: 20px;
+//     width:260px;
+//     height:100px;
+//     -webkit-box-shadow: 0px 0px 17px -11px black;
+//     box-shadow: 0px 0px 15px -8px black;
+//     background-color:white;
+//     border-radius:10px;
+//     display:flex;
+//     align-items:left;
+// `;
 
-    @media screen and (max-width: 1200px) {
-        width:200px;
-        height:100px;
-    }
-`;
+const cardStyle = {
+    padding: "20px",
+    width:"260px",
+    height:"100px",
+    display:"flex",
+}
 
 const AboutContainer = styled.div`
     display:flex;
@@ -26,6 +28,7 @@ const AboutContainer = styled.div`
     align-items:left;
     justify-content:center;
 `;
+
 const Title = styled.h1`
   font-size:15px;
   color:darkgrey;
@@ -56,13 +59,28 @@ const Image = styled.img`
 `;
 const Earnings = () => {
   return (
-    <Container>
-      <Image src= {Dollar}></Image>
-      <AboutContainer>
-      <Title>Earnings</Title>
-      <Desc> $ (insert earnings)</Desc>
-      </AboutContainer>
-    </Container>
+    <Card style={cardStyle}>
+      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+        <CardMedia
+          component="img"
+          sx={{ width: 110 }}
+          image={Dollar}
+          alt="Live from space album cover"
+        />
+        
+      </Box>
+      <CardContent sx={{ flex: '0 1 auto' }}>
+          <Title>Earnings</Title>
+          <Desc> $ (insert earnings)</Desc>
+        </CardContent>
+    </Card>
+    // <Container>
+    //   <Image src= {Dollar}></Image>
+    //   <AboutContainer>
+    //   <Title>Earnings</Title>
+    //   <Desc> $ (insert earnings)</Desc>
+    //   </AboutContainer>
+    // </Container>
   )
 }
 export default Earnings

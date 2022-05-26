@@ -7,6 +7,8 @@ import Login from '../Registration/Login';
 import Logout from '../Registration/Logout';
 import {AuthContext} from "../../context/auth-context";
 import { useMoralis, useMoralisWeb3ApiCall, useMoralisWeb3Api } from "react-moralis";
+import MetaMaskOnboarding from '@metamask/onboarding'
+
 
 
 import './Navbar.css';
@@ -28,6 +30,9 @@ const Menu = styled.ul`
     display:flex;
     list-style:none;
 `;
+
+const onboarding = new MetaMaskOnboarding();
+
 
 const NavBar = () => {
     const auth = useContext(AuthContext);
@@ -55,6 +60,13 @@ const NavBar = () => {
             }
     }
 
+        //Created check function to see if the MetaMask extension is installed
+    const isMetaMaskInstalled = () => {
+        //Have to check the ethereum binding on the window object to see if it's installed
+        const { ethereum } = window;
+        return Boolean(ethereum && ethereum.isMetaMask);
+    };
+
     const logOutMoralis = async () => {
         await logout();
         console.log("logged out");
@@ -76,7 +88,8 @@ const NavBar = () => {
                     <NavLinks setHeaderStyle={setHeaderStyle}/>
                 </Menu>
                 <Menu>
-                {auth.isLoggedIn && !isAuthenticated && <Button onClick={() => authenticate()}> Connect Wallet   </Button>}
+                { !isMetaMaskInstalled() && auth.isLoggedIn && !isAuthenticated && <Button onClick={() => onboarding.startOnboarding()}>  Install Metamask  </Button>}
+                { isMetaMaskInstalled() && auth.isLoggedIn && !isAuthenticated && <Button onClick={() => authenticate()}> Connect Wallet  </Button>}
                 {auth.isLoggedIn && isAuthenticated && <Button onClick={() => logOutMoralis()}> Disconnect Wallet   </Button>}
                 {!auth.isLoggedIn && <Login />}
                 {auth.isLoggedIn && <Logout />}

@@ -1,24 +1,28 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import {ethers} from 'ethers';
+import { Card, Box, CardContent, CardMedia } from '@mui/material';
 import Account from '../assets/wallet.png';
 
-const Container = styled.div`
-    padding:20px;
-    width:260px;
-    height:100px;
-    -webkit-box-shadow: 0px 0px 17px -11px black;
-    box-shadow: 0px 0px 15px -8px black;
-    background-color:white;
-    border-radius:10px;
-    display:flex;
-    align-items:left;
+// const Container = styled.div`
+//     padding:20px;
+//     margin: 0px 20px;
+//     width:260px;
+//     height:100px;
+//     -webkit-box-shadow: 0px 0px 17px -11px black;
+//     box-shadow: 0px 0px 15px -8px black;
+//     background-color:white;
+//     border-radius:10px;
+//     display:flex;
+//     align-items:left;
+// `;
 
-    @media screen and (max-width: 1200px) {
-        width:200px;
-        height:100px;
-    }
-`;
+const cardStyle = {
+    padding: "20px",
+    width:"260px",
+    height:"100px",
+    display:"flex",
+}
 
 const AboutContainer = styled.div`
     display:flex;
@@ -108,6 +112,8 @@ const WalletCard = () => {
         getAccountBalance(newAccount.toString());
     }
 
+    
+
     const getAccountBalance = (account) => {
         window.ethereum.request({method: 'eth_getBalance', params: [account, 'latest']})
         .then(balance => {
@@ -122,9 +128,17 @@ const WalletCard = () => {
         window.location.reload();
     }
 
-    //listen for account changes
-    window.ethereum.on('accountsChanged',accountChangedHandler);
-    window.ethereum.on('chainChanged',chainChangedHandler);
+    
+    //Created check function to see if the MetaMask extension is installed
+    const isMetaMaskInstalled = () => {
+        //Have to check the ethereum binding on the window object to see if it's installed
+        const { ethereum } = window;
+        return Boolean(ethereum && ethereum.isMetaMask);
+    };
+
+    // //listen for account changes
+    // window.ethereum.on('accountsChanged',accountChangedHandler);
+    // window.ethereum.on('chainChanged',chainChangedHandler);
 
     return (
         <Container>
@@ -134,7 +148,8 @@ const WalletCard = () => {
 
         <Title>Current Account Balance</Title>
         <Desc> $ {userBalance}</Desc>
-        <Button onClick={connectWalletHandler}>{connButtonText}</Button>
+        {!isMetaMaskInstalled() && <Desc> download metamask! </Desc>}
+        { isMetaMaskInstalled() && <Button onClick={connectWalletHandler}>{connButtonText}</Button> }
         {/* <Desc>{defaultAccount}</Desc> */}
         {errorMessage}
         </AboutContainer>
