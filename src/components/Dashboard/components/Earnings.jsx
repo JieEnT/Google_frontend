@@ -63,7 +63,7 @@ const Earnings = () => {
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardMedia
           component="img"
-          sx={{ width: 100 }}
+          sx={{ width: 110 }}
           image={Dollar}
           alt="Live from space album cover"
         />
