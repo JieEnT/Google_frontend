@@ -58,7 +58,7 @@ const Image = styled.img`
   margin-top:5px;
   margin-bottom:50px;
 `;
-const NoVege = () => {
+const NoVege = (props) => {
   return (
     <Card style={cardStyle}>
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
@@ -72,7 +72,7 @@ const NoVege = () => {
       </Box>
       <CardContent sx={{ flex: '0 1 auto' }}>
           <Title>Number of vegetables invested</Title>
-         <Desc> (number here)</Desc>
+         <Desc> {props.value}</Desc>
       </CardContent>
     </Card>
     // <Container>

@@ -153,7 +153,6 @@ const NFTs = () => {
 
     useEffect(() => {
       getNFTBal();
-     
     },[]) ;
 
     
@@ -173,7 +172,7 @@ const NFTs = () => {
       {/* CLICK TO SELL KALE HARDCODED KALE ADDRESS & USER ACCT TOKEN  INSIDE FUNCTION */}
       <Button onClick={postNFT}>Post KALE NFT dets</Button>
 
-      {/* <Button onClick={getNFTBal}> Get Bal </Button> */}
+      <Button onClick={getNFTBal}> Get Bal </Button>
 
 
 

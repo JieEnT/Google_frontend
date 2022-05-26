@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { Grid } from '@mui/material';
+import { Grid, Button } from '@mui/material';
+
+import {
+  useMoralis,
+  useMoralisWeb3Api,
+  useNFTBalances,
+  useNativeTransactions,
+
+} from "react-moralis";
 
 // Components
 import Earnings from './components/Earnings'
@@ -36,8 +44,31 @@ const AboutContainer = styled.div`
 `;
 
 const Dashboard = () => {
+
+  const { user, Moralis, isInitialized } = useMoralis();
+
+  const { getNFTBalances, data: NFTbalance } = useNFTBalances();
+  const { getNativeTransations, data:transList , chainId} = useNativeTransactions();
+  var numVege = 0;
+
+  const getNFTBal = async () => {
+    await getNFTBalances({ params: { chain: "rinkeby" } });
+    if(NFTbalance != null) numVege = NFTbalance.result.length;
+    console.log(numVege);
+  };
+
+  useEffect (() => {
+    if(isInitialized){
+      Moralis.initPlugins();
+      Moralis.enableWeb3();
+    }
+    getNFTBal();
+  },[Moralis, isInitialized] );
+
+
   return (
     <Container>
+      {getNFTBal}
       <GridContainer>
         <Grid container rowSpacing={1} columnSpacing={4}>
             <Grid item xs={12} sm={6} md={3} >
@@ -50,12 +81,14 @@ const Dashboard = () => {
               <NextHarvest/>
             </Grid>
             <Grid item xs={12} sm={6} md={3}>
-              <NoVege/>
+              <NoVege value={numVege} />
             </Grid>
         </Grid>
       </GridContainer>
       <Nursery/>
-      <NFTs/>
+
+      < Button onClick={getNFTBal} > Get Bal </Button>
+      {/* <NFTs/> */}
     </Container>
   );
 }

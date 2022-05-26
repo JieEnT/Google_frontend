@@ -2,6 +2,14 @@ import React, { useState, useEffect } from 'react';
 //import the mock data to display
 import { Box, TextField, InputAdornment } from '@mui/material';
 
+import {
+  useMoralis,
+  useMoralisWeb3Api,
+  useNFTBalances,
+  useNativeTransactions,
+
+} from "react-moralis";
+
 import Iconify from '../styling/Iconify';
 
 export default function PlantSearch({ initialData, filterSearch }) {
