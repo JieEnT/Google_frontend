@@ -141,7 +141,7 @@ const PlantCard = ({image, title, tokenvalue, tokenAddress, tokenId}) => {
             // }
                 return newValue;
             });
-        },2000);
+        },1500);
     },[]);
 
     useEffect(() => {
@@ -154,7 +154,7 @@ const PlantCard = ({image, title, tokenvalue, tokenAddress, tokenId}) => {
     useEffect(() => {
       switch(level) {
           case 0:
-              setStagetitle("No plants grown");
+              setStagetitle("Seed Planted");
               break;
           case 1:
               setStagetitle("Seedling");
