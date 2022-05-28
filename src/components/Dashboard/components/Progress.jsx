@@ -25,7 +25,8 @@ const Container = styled.div`
           transition: 1s ease 0.3s;
       }
       margin-bottom:10px;
-      margin-left:5px;
+      margin-left:10px;
+      margin-top:10px;
 `;
 
 const Progress = ({ value, max, color, width }) => {
