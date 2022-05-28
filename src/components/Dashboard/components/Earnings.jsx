@@ -57,7 +57,7 @@ const Image = styled.img`
   margin-top:5px;
   margin-bottom:50px;
 `;
-const Earnings = () => {
+const Earnings = ({value}) => {
   return (
     <Card style={cardStyle}>
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
@@ -71,7 +71,7 @@ const Earnings = () => {
       </Box>
       <CardContent sx={{ flex: '0 1 auto' }}>
           <Title>Earnings</Title>
-          <Desc> $ (insert earnings)</Desc>
+          <Desc> ${value}</Desc>
         </CardContent>
     </Card>
     // <Container>

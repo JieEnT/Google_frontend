@@ -57,7 +57,7 @@ const Image = styled.img`
   margin-top:5px;
   margin-bottom:50px;
 `;
-const NextHarvest = () => {
+const NextHarvest = ({value}) => {
   return (
     <Card style={cardStyle}>
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
@@ -71,7 +71,7 @@ const NextHarvest = () => {
       </Box>
       <CardContent sx={{ flex: '0 1 auto' }}>
           <Title>Estimated time to next harvest</Title>
-          <Desc> (Insert time here)</Desc>
+          <Desc>{value}</Desc>
       </CardContent>
     </Card>
     // <Container>

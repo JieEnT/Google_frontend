@@ -51,6 +51,8 @@ const Dashboard = () => {
   const [balance, setBalance] = useState(0);
   const { user, Moralis } = useMoralis();
   const [numVege, setNumVege] = useState(0);
+  const [earnings, setEarnings] = useState(0);
+  const [nextharvest, setNextharvest]= useState(null);
   
  
   const fetchNFTBalance = async () => {
@@ -85,6 +87,15 @@ const Dashboard = () => {
       }
     );
     setTransactions(res.data);
+    var finalvalue = 0;
+    for (let i = 0; i < res.data.result.length;i++) {
+      finalvalue += res.data.result[0].value;
+      if (i===0) {
+        setNextharvest(res.data.result[0].block_timestamp);
+      }
+    };
+    finalvalue = finalvalue/1000000000000000000;
+    setEarnings(finalvalue);
   };
 
   const fetchBalance = async () => {
@@ -127,20 +138,20 @@ const Dashboard = () => {
   console.log(transactions);
 
   console.log(balance);
-
+  console.log(nextharvest);
   return ( 
     <Container>
       <GridContainer>
         <Grid container rowSpacing={1} columnSpacing={4}>
           <Grid item xs={12} sm={6} md={3}>
-            <Earnings />
+            <Earnings value={earnings} />
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
           <WalletCard value={balance.balance}/>
              {/* { balance != null && <WalletCard value={balance.balance/100}/>} */}
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
-            <NextHarvest />
+            <NextHarvest value={nextharvest}/>
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
             <NoVege value={numVege}/>
