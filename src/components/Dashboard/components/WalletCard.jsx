@@ -60,58 +60,58 @@ const Image = styled.img`
   margin-bottom:50px;
 `;
 
-const WalletCard = () => {
-    const [errorMessage, setErrorMessage] = useState(null);
-    const [defaultAccount, setDefaultAccount] = useState(null);
-    const [userBalance, setUserBalance] = useState(null);
-    const [connButtonText, setConnButtonText] = useState("Connect Wallet");
+const WalletCard = (props) => {
+    // const [errorMessage, setErrorMessage] = useState(null);
+    // const [defaultAccount, setDefaultAccount] = useState(null);
+    // const [userBalance, setUserBalance] = useState(null);
+    // const [connButtonText, setConnButtonText] = useState("Connect Wallet");
     
-    const connectWalletHandler = () => {
-        if (window.ethereum) {
-            window.ethereum.request({method: 'eth_requestAccounts'})
-            .then(result => {
-                accountChangedHandler(result[0]);
-                setConnButtonText('Wallet Connected');
-                getAccountBalance(result[0]);
-            })
-            .catch(error => {
-                setErrorMessage(error.message);
-            })
-        } else {
-            console.log('Need to install MetaMask');
-            setErrorMessage('Please install MetaMask browser extension to interact');
-        }
-    }
+    // const connectWalletHandler = () => {
+    //     if (window.ethereum) {
+    //         window.ethereum.request({method: 'eth_requestAccounts'})
+    //         .then(result => {
+    //             accountChangedHandler(result[0]);
+    //             setConnButtonText('Wallet Connected');
+    //             getAccountBalance(result[0]);
+    //         })
+    //         .catch(error => {
+    //             setErrorMessage(error.message);
+    //         })
+    //     } else {
+    //         console.log('Need to install MetaMask');
+    //         setErrorMessage('Please install MetaMask browser extension to interact');
+    //     }
+    // }
 
-    //update account
-    const accountChangedHandler = (newAccount) => {
-        setDefaultAccount(newAccount);
-        getAccountBalance(newAccount.toString());
-    }
-
-    
-
-    const getAccountBalance = (account) => {
-        window.ethereum.request({method: 'eth_getBalance', params: [account, 'latest']})
-        .then(balance => {
-            setUserBalance(ethers.utils.formatEther(balance));
-        })
-        .catch(error => {
-            setErrorMessage(error.message);
-        })
-    };
-
-    const chainChangedHandler = () => {
-        window.location.reload();
-    }
+    // //update account
+    // const accountChangedHandler = (newAccount) => {
+    //     setDefaultAccount(newAccount);
+    //     getAccountBalance(newAccount.toString());
+    // }
 
     
-    //Created check function to see if the MetaMask extension is installed
-    const isMetaMaskInstalled = () => {
-        //Have to check the ethereum binding on the window object to see if it's installed
-        const { ethereum } = window;
-        return Boolean(ethereum && ethereum.isMetaMask);
-    };
+
+    // const getAccountBalance = (account) => {
+    //     window.ethereum.request({method: 'eth_getBalance', params: [account, 'latest']})
+    //     .then(balance => {
+    //         setUserBalance(ethers.utils.formatEther(balance));
+    //     })
+    //     .catch(error => {
+    //         setErrorMessage(error.message);
+    //     })
+    // };
+
+    // const chainChangedHandler = () => {
+    //     window.location.reload();
+    // }
+
+    
+    // //Created check function to see if the MetaMask extension is installed
+    // const isMetaMaskInstalled = () => {
+    //     //Have to check the ethereum binding on the window object to see if it's installed
+    //     const { ethereum } = window;
+    //     return Boolean(ethereum && ethereum.isMetaMask);
+    // };
 
     // //listen for account changes
     // window.ethereum.on('accountsChanged',accountChangedHandler);
@@ -143,7 +143,7 @@ const WalletCard = () => {
       </Box>
       <CardContent sx={{ flex: '0 1 auto' }}>
           <Title>Current Account Balance</Title>
-          <Desc> $ (insert data)</Desc>
+          <Desc> {props.value/1000000000000000000} </Desc>
         </CardContent>
     </Card>
     )
