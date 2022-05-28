@@ -11,7 +11,7 @@ const MarketPlace = () => {
         <Container>
             <iframe
                 title="OpenseaApi" 
-                src='https://testnets.opensea.io/collection/kale?embed=true'
+                src='https://testnets.opensea.io/collection/dveg-v2?embed=true'
                 width='100%'
                 height='100%'
                 frameborder='0'
