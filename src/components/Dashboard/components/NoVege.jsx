@@ -53,7 +53,7 @@ const Desc = styled.p`
 `;
 const Image = styled.img`
   width:40%;
-  height:100px;
+  height:90px;
   position:relative;
   margin-top:5px;
   margin-bottom:50px;
@@ -64,14 +64,14 @@ const NoVege = (props) => {
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardMedia
           component="img"
-          sx={{ width: 100 }}
+          sx={{ width: 60, marginTop:2 }}
           image={Vege}
           alt="Ve"
         />
         
       </Box>
-      <CardContent sx={{ flex: '0 1 auto' }}>
-          <Title>Number of vegetables invested</Title>
+      <CardContent sx={{ flex: '0 1 auto', marginTop:1}}>
+          <Title>Vegetables invested</Title>
          <Desc> {props.value}</Desc>
       </CardContent>
     </Card>

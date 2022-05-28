@@ -63,13 +63,13 @@ const NextHarvest = ({value}) => {
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardMedia
           component="img"
-          sx={{ width: 85 }}
+          sx={{ width: 60, marginTop:2 }}
           image={Harvest}
           alt="Live from space album cover"
         />
         
       </Box>
-      <CardContent sx={{ flex: '0 1 auto' }}>
+      <CardContent sx={{ flex: '0 1 auto', marginTop:1 }}>
           <Title>Date of next harvest</Title>
           <Desc>{value}</Desc>
       </CardContent>

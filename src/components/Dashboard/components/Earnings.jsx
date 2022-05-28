@@ -54,8 +54,7 @@ const Image = styled.img`
   width:40%;
   height:100px;
   position:relative;
-  margin-top:5px;
-  margin-bottom:50px;
+  margin-bottom:80px;
 `;
 const Earnings = ({value}) => {
   return (
@@ -63,15 +62,15 @@ const Earnings = ({value}) => {
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardMedia
           component="img"
-          sx={{ width: 110 }}
+          sx={{ width: 80, marginTop:1 }}
           image={Dollar}
           alt="Live from space album cover"
         />
         
       </Box>
-      <CardContent sx={{ flex: '0 1 auto' }}>
+      <CardContent sx={{ flex: '0 1 auto', marginTop:1 }}>
           <Title>Earnings</Title>
-          <Desc> ${value}</Desc>
+          <Desc> {value.toFixed(3)}/ETH</Desc>
         </CardContent>
     </Card>
     // <Container>
