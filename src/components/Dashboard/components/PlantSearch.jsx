@@ -51,10 +51,10 @@ export default function PlantSearch({ initialData, filterSearch }) {
       <Box sx={{
         width: {
           xs: 200, // theme.breakpoints.up('xs')
-          sm: 300, // theme.breakpoints.up('sm')
+          sm: 350, // theme.breakpoints.up('sm')
           md: 600, // theme.breakpoints.up('md')
-          lg: 700, // theme.breakpoints.up('lg')
-          xl: 900, // theme.breakpoints.up('xl')
+          lg: 950, // theme.breakpoints.up('lg')
+          xl: 1050, // theme.breakpoints.up('xl')
         },
         mt: 1,
         mb: 4,

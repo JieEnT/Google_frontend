@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Grid } from '@mui/material';
+import { Box, Card, Link, Typography, Stack } from '@mui/material';
 import styled from 'styled-components'
 import Progress from './Progress'
 import { useMoralis } from 'react-moralis';
@@ -35,8 +36,8 @@ const AboutContainer = styled.div`
     justify-content:center;
 `;
 const Image = styled.img`
-  width:70px;
-  height:60px;
+  width:90px;
+  height:85px;
   position:relative;
   margin-bottom:5px;
   background-color:#bbe6b8;
@@ -50,10 +51,10 @@ const Image = styled.img`
 `;
 const Title = styled.h1`
   width:100%;
-  font-size:16px;
+  font-size:20px;
   color:black;
   text-align:left;
-  margin-left:10px;
+  margin-left:20px;
   margin-right:5px;
 `;
 
@@ -64,7 +65,7 @@ const Desc = styled.p`
   text-align:left;
   color:black;
   margin-bottom:5px;
-  margin-left:5px;
+  margin-left:0px;
 `;
 
 const ValueDesc = styled.p`
@@ -169,7 +170,26 @@ const PlantCard = ({image, title, tokenvalue, tokenAddress, tokenId}) => {
       }
   }, [level,tokenValue, tokenvalue]);
   return (
-    <Grid item xs={12} sm={6} md={3} mb={3}>
+    <Card sx={{ borderRadius:2 }}>
+        <Box sx={{ position: 'relative'}}>
+          <Image alt={'dd'} src={image} ratio="1/1" />
+        </Box>
+
+       <AboutContainer>
+            <Title>{title}</Title>
+            <Desc>{stagetitle} </Desc>
+            </AboutContainer>
+            <Progress color={"darkblue"} width={"190px"} value={value} max={100}/>
+            <AboutContainer>
+            <ValueDesc>{ tokenValue }</ValueDesc>
+            {button}
+        </AboutContainer>
+    </Card>
+  )
+}
+export default PlantCard
+
+{/* <Grid item xs={12} sm={6} md={3} mb={3}>
         <Container>
             <Image src= {image}></Image>
             <AboutContainer>
@@ -182,7 +202,4 @@ const PlantCard = ({image, title, tokenvalue, tokenAddress, tokenId}) => {
             {button}
             </AboutContainer>
         </Container>
-    </Grid>
-  )
-}
-export default PlantCard
+    </Grid> */}
