@@ -31,8 +31,8 @@ const Plants = (props) => {
               // <PlantCard image = {Kale} title = {vege.name} tokenvalue={vege.tokenvalue}></PlantCard>
               <div>
                 {(() => {
-                  switch (vege.symbol) {
-                    case "KLE":
+                  switch (vege.token_id) {
+                    case "8":
                       return (
                         <PlantCard
                           image={'https://storage.googleapis.com/pomona/kale.png'}
@@ -43,7 +43,7 @@ const Plants = (props) => {
 
                         ></PlantCard>
                       );
-                    case "CMBR":
+                    case "10":
                       return (
                         <PlantCard
                           image={'https://storage.googleapis.com/pomona/cucumber.png'}
@@ -53,7 +53,7 @@ const Plants = (props) => {
                           tokenId={vege.token_id}
                         ></PlantCard>
                       );
-                    case "TMO":
+                    case "9":
                       return (
                         <PlantCard
                           image={'https://storage.googleapis.com/pomona/tomato.png'}
