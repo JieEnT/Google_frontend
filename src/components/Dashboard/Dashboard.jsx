@@ -91,12 +91,21 @@ const Dashboard = () => {
     for (let i = 0; i < res.data.result.length;i++) {
       finalvalue += res.data.result[0].value;
       if (i===0) {
-        setNextharvest(res.data.result[0].block_timestamp);
+        const dateString = res.data.result[i].block_timestamp;
+        setNextharvest(formatDate(dateString));
+        // setNextharvest(res.data.result[0].block_timestamp);
       }
     };
     finalvalue = finalvalue/1000000000000000000;
     setEarnings(finalvalue);
   };
+  const formatDate = (dateString) => {
+    const options = { year: "numeric", month: "long", day: "numeric" }
+    var date = new Date(dateString);
+    date.setDate(date.getDate() + 30);
+    return date.toLocaleDateString(undefined, options)
+  }
+  // console.log(formatDate(dateString))
 
   const fetchBalance = async () => {
     const res = await axios.get(

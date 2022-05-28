@@ -70,7 +70,7 @@ const NextHarvest = ({value}) => {
         
       </Box>
       <CardContent sx={{ flex: '0 1 auto' }}>
-          <Title>Estimated time to next harvest</Title>
+          <Title>Date of next harvest</Title>
           <Desc>{value}</Desc>
       </CardContent>
     </Card>
