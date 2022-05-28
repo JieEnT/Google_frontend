@@ -91,14 +91,14 @@ const Dashboard = () => {
     setTransactions(res.data);
     var finalvalue = 0;
     for (let i = 0; i < res.data.result.length;i++) {
-      finalvalue += res.data.result[0].value;
+      finalvalue += res.data.result[0].gas;
       if (i===0) {
         const dateString = res.data.result[i].block_timestamp;
         setNextharvest(formatDate(dateString));
         // setNextharvest(res.data.result[0].block_timestamp);
       }
     };
-    finalvalue = finalvalue/1000000000000000000;
+    finalvalue = finalvalue/1000000000000000000000000;
     setEarnings(finalvalue);
   };
   const formatDate = (dateString) => {

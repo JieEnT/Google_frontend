@@ -71,7 +71,7 @@ const Plants = (props) => {
             ))}
         </Box>
       );
-
+      }
   // const fetchNFTData = async () => {
   //   const NFTdata = await Moralis.Plugins.opensea.getAsset({
   //     network: "testnet",
