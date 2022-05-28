@@ -24,7 +24,7 @@ import NFTs from "./components/NFTs";
 const Background = 'https://storage.googleapis.com/pomona/dashboardbg.jpg';
 
 const Container = styled.div`
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   background-image: url(${Background});
@@ -175,11 +175,6 @@ const Dashboard = () => {
         </Grid>
       </GridContainer>
       <Nursery value={NFTBalance}/>
-
-      {/* < Button onClick={getNFTBal} > Get Bal </Button> */}
-      {/* < Button onClick={fetchReq} > Get Bal </Button> */}
-
-      {/* <NFTs/> */}
       
     </Container>
   
