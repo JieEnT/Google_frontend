@@ -35,7 +35,7 @@ const Plants = (props) => {
                     case "8":
                       return (
                         <PlantCard
-                          image={'https://storage.googleapis.com/pomona/kale.png'}
+                          image={'https://storage.googleapis.com/pomona/dveg_kale-removebg.png'}
                           title="Kale"
                           tokenvalue="0.002/ETH"
                           tokenAddress={vege.token_address}
@@ -46,7 +46,7 @@ const Plants = (props) => {
                     case "10":
                       return (
                         <PlantCard
-                          image={'https://storage.googleapis.com/pomona/cucumber.png'}
+                          image={'https://storage.googleapis.com/pomona/dveg_cucumber-removebg.png'}
                           title="Cucumber"
                           tokenvalue="0.002/ETH"
                           tokenAddress={vege.token_address}
@@ -56,7 +56,7 @@ const Plants = (props) => {
                     case "9":
                       return (
                         <PlantCard
-                          image={'https://storage.googleapis.com/pomona/tomato.png'}
+                          image={'https://storage.googleapis.com/pomona/dveg_tomato-removebg.png'}
                           title="Tomato"
                           tokenvalue="0.002/ETH"
                           tokenAddress={vege.token_address}
