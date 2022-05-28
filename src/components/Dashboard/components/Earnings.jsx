@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Card, Box, CardContent, CardMedia } from '@mui/material';
-import Dollar from '../assets/dollar.jpg'
+
+const Dollar = 'https://storage.googleapis.com/pomona/dollar.jpg';
 
 // const Container = styled.div`
 //     padding: 20px;

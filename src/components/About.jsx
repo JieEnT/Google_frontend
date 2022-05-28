@@ -1,11 +1,12 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 import AboutCard from './AboutCard';
 
-import DigitalToken from '../assets/digitaltoken.jpg'
-import Vegetable from '../assets/farming.jpg'
-import Earning from '../assets/11229.jpg'
+const DigitalToken = 'https://storage.googleapis.com/pomona/digitaltoken.jpg';
+const Vegetable = 'https://storage.googleapis.com/pomona/farming.jpg';
+const Earning = 'https://storage.googleapis.com/pomona/11229.jpg';
+
 
 const Container = styled.div`
     height:100%;

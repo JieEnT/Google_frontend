@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Card, Box, CardContent, CardMedia } from '@mui/material';
-import Vege from '../assets/organic-food.png';
+
+const Vege = 'https://storage.googleapis.com/pomona/organic-food.png';
 
 // const Container = styled.div`
 //     padding: 20px;

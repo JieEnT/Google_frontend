@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import {ethers} from 'ethers';
 import { Card, Box, CardContent, CardMedia } from '@mui/material';
-import Account from '../assets/wallet.png';
+
+const Account = 'https://storage.googleapis.com/pomona/wallet.png';
 
 // const Container = styled.div`
 //     padding:20px;
@@ -137,7 +138,7 @@ const WalletCard = (props) => {
           component="img"
           sx={{ width: 65, marginTop: 2, marginLeft:2 }}
           image={Account}
-          alt="Live from space album cover"
+          alt="Account Balance"
         />
         
       </Box>

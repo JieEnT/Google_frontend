@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import About from './About'
 
-import Background from '../assets/parallax-bg.gif';
+const Background = 'https://storage.googleapis.com/pomona/parallax-bg.gif';
 
 
 const WrapperContainer = styled.div`

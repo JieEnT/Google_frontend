@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Card, Box, CardContent, CardMedia } from '@mui/material';
-import Harvest from '../assets/carrot.png'
+
+const Harvest = 'https://storage.googleapis.com/pomona/carrot.png';
 
 // const Container = styled.div`
 //     padding: 20px;

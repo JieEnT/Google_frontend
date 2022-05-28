@@ -21,7 +21,7 @@ import Nursery from "./components/Nursery";
 import NFTs from "./components/NFTs";
 
 // Assets
-import Background from "./assets/dashboardbg.jpg";
+const Background = 'https://storage.googleapis.com/pomona/dashboardbg.jpg';
 
 const Container = styled.div`
   height: 100%;

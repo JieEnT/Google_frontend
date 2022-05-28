@@ -1,6 +1,6 @@
-import Kale from '../assets/kale.png'
-import Tomato from '../assets/tomato.png'
-import Cucumber from '../assets/cucumber.png'
+const Kale = 'https://storage.googleapis.com/pomona/kale.png'
+const Tomato = 'https://storage.googleapis.com/pomona/tomato.png'
+const Cucumber = 'https://storage.googleapis.com/pomona/cucumber.png'
 
 export const vegetables = [
   { image: Kale, title:"Kale 1", tokenvalue:"0.3/ETH" },
