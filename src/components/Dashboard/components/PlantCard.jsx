@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Grid } from '@mui/material';
 import styled from 'styled-components'
 import Progress from './Progress'
+import { useMoralis } from 'react-moralis';
 
 const Container = styled.div`
     padding: 0px 0px;
@@ -96,13 +97,37 @@ const Button = styled.button`
     }
 `;
 
-const PlantCard = ({image, title, tokenvalue}) => {
+const PlantCard = ({image, title, tokenvalue, tokenAddress, tokenId}) => {
   const [level,setLevel] = useState(0);
   const [value,setValue] = useState(0);
   const [stagetitle, setStagetitle] = useState("No plants grown");
   const [tokenValue, setTokenValue] = useState("");
   const [button, setButton] = useState(null);
+  const {user, Moralis} = useMoralis();
+
+
+  const createSellOrder = async () => {
+    const expirationTime = Math.round(Date.now() / 1000 + 60 * 60 * 24);
+    const startAmount = 0.001; //price that will be listed on opensea
+    const endAmount = 0.001; //start == endprice
+
+    await Moralis.Plugins.opensea.createSellOrder({
+      network: "testnet",
+      tokenAddress: tokenAddress, 
+      tokenId: tokenId,
+      tokenType: "ERC1155",
+      userAddress: user.attributes.ethAddress, // ** NEED TO CHANGE TO YOUR OWN ADDRESS AND THAT U MUST OWN SOME AMT OF KALE **
+      startAmount,
+      endAmount,
+      // expirationTime: startAmount > endAmount && expirationTime, // Only set if you startAmount > endAmount
+    });
+
+    console.log("Create Sell Order Successful");
+  };
+
+
   useEffect(() => {
+    Moralis.enableWeb3();
     const interval = setInterval(() => {
         setValue (oldValue => {
             const newValue = oldValue + 10;
@@ -154,7 +179,7 @@ const PlantCard = ({image, title, tokenvalue}) => {
             <Progress color={"darkblue"} width={"160px"} value={value} max={100}/>
             <AboutContainer>
             <ValueDesc>{ tokenValue }</ValueDesc>
-            {button}
+            {<Button onClick={createSellOrder}> Sell</Button>}
             </AboutContainer>
         </Container>
     </Grid>

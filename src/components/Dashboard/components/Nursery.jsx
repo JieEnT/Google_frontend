@@ -42,20 +42,23 @@ const Desc = styled.p`
 `;
 
 
-const Nursery = () => {
+const Nursery = (props) => {
   //result of the filtered plants
   const [searchResult, setSearchResult] = useState([]);
+
 
   //Set initial data
   useEffect(() => {
     setSearchResult(vegetables);
   }, []);
 
+  // console.log(props.value);
+
   return (
     <Container>
       <AboutContainer>
         <PlantSearch initialData={vegetables} filterSearch={setSearchResult}/>
-        <Plants filteredSearchResults={searchResult}/>
+        {props.value && <Plants value={props.value}/>}
       </AboutContainer>
     </Container>
   )

@@ -53,13 +53,14 @@ const Dashboard = () => {
   const [numVege, setNumVege] = useState(0);
   const [earnings, setEarnings] = useState(0);
   const [nextharvest, setNextharvest]= useState(null);
+  const [NFTList, setNFTList] = useState({});
   
  
   const fetchNFTBalance = async () => {
     await axios.get(
       "https://deep-index.moralis.io/api/v2/" +
         `${user.attributes.ethAddress}` +
-        "/nft?chain=rinkeby&format=decimal&limit=1",
+        "/nft?chain=rinkeby&format=decimal",
       {
         headers: {
           accept: "application/json",
@@ -68,8 +69,9 @@ const Dashboard = () => {
         },
       }
     ).then( (res) => {
+      setNFTBalance(res.data.result);
       setNumVege(res.data.result.length);
-      setNFTBalance(res.data);
+
     });
   };
 
@@ -77,7 +79,7 @@ const Dashboard = () => {
     const res = await axios.get(
       "https://deep-index.moralis.io/api/v2/" +
         `${user.attributes.ethAddress}` +
-        "?chain=rinkeby&limit=1",
+        "?chain=rinkeby",
       {
         headers: {
           accept: "application/json",
@@ -111,7 +113,7 @@ const Dashboard = () => {
     const res = await axios.get(
       "https://deep-index.moralis.io/api/v2/" +
         `${user.attributes.ethAddress}` +
-        "/balance?chain=rinkeby&limit=1",
+        "/balance?chain=rinkeby",
       {
         headers: {
           accept: "application/json",
@@ -129,25 +131,29 @@ const Dashboard = () => {
       tokenAddress: "0xBc4595D6d8Cc28C3f611f3B9d778270935e9C8a1",
       tokenId: "1",
     });
-    console.log(NFTdata);
+
+    setNFTList({...NFTList, ...NFTdata});
+
+    // console.log(NFTdata);
   };
 
   useEffect(() => {
-
     Moralis.initPlugins();
     fetchNFTBalance();
     fetchTransactions();
     fetchBalance();
+
     //eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
 
-  console.log(NFTBalance);
+  // console.log(NFTList);
 
-  console.log(transactions);
 
-  console.log(balance);
-  console.log(nextharvest);
+  // console.log(transactions);
+
+  // console.log(balance);
+  // console.log(nextharvest);
   return ( 
     <Container>
       <GridContainer>
@@ -168,7 +174,7 @@ const Dashboard = () => {
           </Grid>
         </Grid>
       </GridContainer>
-      <Nursery />
+      <Nursery value={NFTBalance}/>
 
       {/* < Button onClick={getNFTBal} > Get Bal </Button> */}
       {/* < Button onClick={fetchReq} > Get Bal </Button> */}
