@@ -2,10 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { Grid } from "@mui/material";
 
-import Kale from "../assets/kale.png";
-import Tomato from "../assets/tomato.png";
-import Cucumber from "../assets/cucumber.png";
-
 import PlantCard from "./PlantCard";
 
 const Container = styled.div`
@@ -37,7 +33,7 @@ const Plants = (props) => {
               case "KLE":
                 return (
                   <PlantCard
-                    image={Kale}
+                    image={'https://storage.googleapis.com/pomona/kale.png'}
                     title={vege.name}
                     tokenvalue={vege.tokenvalue}
                     tokenAddress={vege.token_address}
@@ -48,7 +44,7 @@ const Plants = (props) => {
               case "CMBR":
                 return (
                   <PlantCard
-                    image={Cucumber}
+                    image={'https://storage.googleapis.com/pomona/cucumber.png'}
                     title={vege.name}
                     tokenvalue={vege.tokenvalue}
                     tokenAddress={vege.token_address}
@@ -58,7 +54,7 @@ const Plants = (props) => {
               case "TMO":
                 return (
                   <PlantCard
-                    image={Tomato}
+                    image={'https://storage.googleapis.com/pomona/tomato.png'}
                     title={vege.name}
                     tokenvalue={vege.tokenvalue}
                     tokenAddress={vege.token_address}
