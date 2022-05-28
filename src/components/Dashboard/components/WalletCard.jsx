@@ -143,7 +143,7 @@ const WalletCard = (props) => {
       </Box>
       <CardContent sx={{ flex: '0 1 auto' }}>
           <Title>Current Account Balance</Title>
-          <Desc> {props.value/1000000000000000000} </Desc>
+          <Desc>{(props.value/1000000000000000000).toFixed(3)}/ETH</Desc>
         </CardContent>
     </Card>
     )
