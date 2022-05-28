@@ -64,7 +64,7 @@ const NoVege = (props) => {
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardMedia
           component="img"
-          sx={{ width: 60, marginTop:2 }}
+          sx={{ width: 60, marginTop:2, marginLeft:2 }}
           image={Vege}
           alt="Ve"
         />

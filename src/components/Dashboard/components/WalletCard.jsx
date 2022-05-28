@@ -135,14 +135,14 @@ const WalletCard = (props) => {
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardMedia
           component="img"
-          sx={{ width: 60, marginTop: 1 }}
+          sx={{ width: 65, marginTop: 2, marginLeft:2 }}
           image={Account}
           alt="Live from space album cover"
         />
         
       </Box>
       <CardContent sx={{ flex: '0 1 auto', marginTop:1}}>
-          <Title>Current Account Balance</Title>
+          <Title>Account Balance</Title>
           <Desc>{(props.value/1000000000000000000).toFixed(3)}/ETH</Desc>
         </CardContent>
     </Card>
