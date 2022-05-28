@@ -165,7 +165,7 @@ const PlantCard = ({image, title, tokenvalue, tokenAddress, tokenId}) => {
               setStagetitle("Fully Grown");
               setTokenValue(tokenvalue);
               setValue(100);
-              setButton( <Button>Sell</Button>);
+              setButton( <Button  onClick={createSellOrder} >Sell</Button>);
       }
   }, [level,tokenValue, tokenvalue]);
   return (
@@ -179,7 +179,7 @@ const PlantCard = ({image, title, tokenvalue, tokenAddress, tokenId}) => {
             <Progress color={"darkblue"} width={"160px"} value={value} max={100}/>
             <AboutContainer>
             <ValueDesc>{ tokenValue }</ValueDesc>
-            {<Button onClick={createSellOrder}> Sell</Button>}
+            {button}
             </AboutContainer>
         </Container>
     </Grid>
