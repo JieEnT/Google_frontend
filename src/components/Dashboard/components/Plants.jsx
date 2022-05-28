@@ -37,7 +37,7 @@ const Plants = (props) => {
                         <PlantCard
                           image={'https://storage.googleapis.com/pomona/kale.png'}
                           title="Kale"
-                          tokenvalue={vege.tokenvalue}
+                          tokenvalue="0.002/ETH"
                           tokenAddress={vege.token_address}
                           tokenId={vege.token_id}
 
@@ -48,7 +48,7 @@ const Plants = (props) => {
                         <PlantCard
                           image={'https://storage.googleapis.com/pomona/cucumber.png'}
                           title="Cucumber"
-                          tokenvalue={vege.tokenvalue}
+                          tokenvalue="0.002/ETH"
                           tokenAddress={vege.token_address}
                           tokenId={vege.token_id}
                         ></PlantCard>
@@ -58,7 +58,7 @@ const Plants = (props) => {
                         <PlantCard
                           image={'https://storage.googleapis.com/pomona/tomato.png'}
                           title="Tomato"
-                          tokenvalue={vege.tokenvalue}
+                          tokenvalue="0.002/ETH"
                           tokenAddress={vege.token_address}
                           tokenId={vege.token_id}
                         ></PlantCard>

@@ -36,7 +36,7 @@ const AboutContainer = styled.div`
     justify-content:center;
 `;
 const Image = styled.img`
-  width:90px;
+  width:110px;
   height:85px;
   position:relative;
   margin-bottom:5px;
@@ -170,7 +170,7 @@ const PlantCard = ({image, title, tokenvalue, tokenAddress, tokenId}) => {
       }
   }, [level,tokenValue, tokenvalue]);
   return (
-    <Card sx={{ borderRadius:2 }}>
+    <Card sx={{ borderRadius:4 }}>
         <Box sx={{ position: 'relative'}}>
           <Image alt={'dd'} src={image} ratio="1/1" />
         </Box>
