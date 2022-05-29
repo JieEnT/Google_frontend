@@ -1,15 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Grid, Box } from '@mui/material';
+import { Box } from '@mui/material';
 
 import PlantCard from "./PlantCard";
-
-const Container = styled.div`
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-`;
 
 const Plants = (props) => {
       const NFTbalance = props.value;
@@ -28,7 +20,6 @@ const Plants = (props) => {
           }}
         >
             {NFTbalance.map((vege) => (
-              // <PlantCard image = {Kale} title = {vege.name} tokenvalue={vege.tokenvalue}></PlantCard>
               <div>
                 {(() => {
                   switch (vege.token_id) {
@@ -72,12 +63,5 @@ const Plants = (props) => {
         </Box>
       );
       }
-  // const fetchNFTData = async () => {
-  //   const NFTdata = await Moralis.Plugins.opensea.getAsset({
-  //     network: "testnet",
-  //     tokenAddress: "0xBc4595D6d8Cc28C3f611f3B9d778270935e9C8a1",
-  //     tokenId: "1",
-  //   });
-  //   console.log(NFTdata);
-  // };
+
 export default Plants;

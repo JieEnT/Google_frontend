@@ -46,7 +46,7 @@ const LoginForm = (props) => {
     //To exit the modal after login
     props.onCancel();
     //Redirect back to dashboard
-    nav("/u1/dashboard");
+    nav("/");
   },[auth, nav, props]);
 
   return(

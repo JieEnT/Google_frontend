@@ -17,9 +17,9 @@ const Container = styled.div`
 const About = () => {
   return (
     <Container>
-      <AboutCard image= {DigitalToken} title="Invest in digital tokens" desc="Discover, buy and sell digital tokens to invest in the vegetable of your choice from the NFT marketplace."/>
-      <AboutCard image = {Vegetable} title="Track the growth of your vegetables" desc="Track the growth of the vegetables you have invested in real-time through integration with IoT sensors in farms."/>
-      <AboutCard image = {Earning} title="Review your investment earnings" desc="Track your earnings and keep up to update on the next harvest cycle for your vegetables on the dashboard."/>
+      <AboutCard image= {DigitalToken} title="Decentralizing Agriculture" desc="We enable consumers to be actively involved in the growth of their local food sources through the use of Semi-Fungible Tokens."/>
+      <AboutCard image = {Vegetable} title="Lifecycle Traceability" desc="We provide traceability for consumers to track the real-time growth of their vegetables in farms through IoT integration."/>
+      <AboutCard image = {Earning} title="Profit & Risk Sharing" desc="As SFT sales offset operational costs for urban farmers to minimize cyclical risks, they reciprocate by profit-sharing."/>
     </Container>
   );
 }

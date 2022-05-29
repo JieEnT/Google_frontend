@@ -4,31 +4,12 @@ import { Card, Box, CardContent, CardMedia } from '@mui/material';
 
 const Harvest = 'https://storage.googleapis.com/pomona/carrot.png';
 
-// const Container = styled.div`
-//     padding: 20px;
-//     margin: 0px 20px;
-//     width:260px;
-//     height:100px;
-//     -webkit-box-shadow: 0px 0px 17px -11px black;
-//     box-shadow: 0px 0px 15px -8px black;
-//     background-color:white;
-//     border-radius:10px;
-//     display:flex;
-//     align-items:left;
-// `;
 const cardStyle = {
     padding: "20px",
     width:"260px",
     height:"100px",
     display:"flex",
 }
-
-const AboutContainer = styled.div`
-    display:flex;
-    flex-direction:column;
-    align-items:left;
-    justify-content:center;
-`;
 
 const Title = styled.h1`
   font-size:15px;
@@ -51,13 +32,7 @@ const Desc = styled.p`
         font-size:13px;
     }
 `;
-const Image = styled.img`
-  width:40%;
-  height:100px;
-  position:relative;
-  margin-top:5px;
-  margin-bottom:50px;
-`;
+
 const NextHarvest = ({value}) => {
   return (
     <Card style={cardStyle}>
@@ -75,13 +50,6 @@ const NextHarvest = ({value}) => {
           <Desc>{value}</Desc>
       </CardContent>
     </Card>
-    // <Container>
-    //     <Image src= {Harvest}></Image>
-    //   <AboutContainer>
-    //   <Title>Estimated time to next harvest</Title>
-    //   <Desc> (Insert time here)</Desc>
-    //   </AboutContainer>
-    // </Container>
   )
 }
 export default NextHarvest

@@ -30,7 +30,6 @@ const Container = styled.div`
   background-image: url(${Background});
   background-size: cover;
   margin: auto;
-  ${"" /* background-color:rgba(26, 58, 122); */}
 `;
 
 const GridContainer = styled.div`
@@ -99,7 +98,7 @@ const Dashboard = () => {
       }
     };
     finalvalue = finalvalue/1000000000000000000000000;
-    setEarnings(finalvalue);
+    setEarnings(0);
   };
   const formatDate = (dateString) => {
     const options = { year: "numeric", month: "long", day: "numeric" }
@@ -131,10 +130,7 @@ const Dashboard = () => {
       tokenAddress: "0xBc4595D6d8Cc28C3f611f3B9d778270935e9C8a1",
       tokenId: "1",
     });
-
     setNFTList({...NFTList, ...NFTdata});
-
-    // console.log(NFTdata);
   };
 
   useEffect(() => {
@@ -142,36 +138,29 @@ const Dashboard = () => {
     fetchNFTBalance();
     fetchTransactions();
     fetchBalance();
-
-    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-
-  // console.log(NFTList);
-
-
-  // console.log(transactions);
-
-  // console.log(balance);
-  // console.log(nextharvest);
   return ( 
     <Container>
       <GridContainer>
         <Grid container rowSpacing={1} columnSpacing={4}>
+
           <Grid item xs={12} sm={6} md={3}>
             <Earnings value={earnings} />
           </Grid>
+
           <Grid item xs={12} sm={6} md={3}>
           <WalletCard value={balance.balance}/>
-             {/* { balance != null && <WalletCard value={balance.balance/100}/>} */}
           </Grid>
+
           <Grid item xs={12} sm={6} md={3}>
             <NextHarvest value={nextharvest}/>
           </Grid>
+
           <Grid item xs={12} sm={6} md={3}>
             <NoVege value={numVege}/>
-           {/* { NFTbalance != null && <NoVege value={NFTBalance.result.length} />} */}
           </Grid>
+          
         </Grid>
       </GridContainer>
       <Nursery value={NFTBalance}/>
@@ -180,22 +169,5 @@ const Dashboard = () => {
   
   );
 };
-
-{
-  /* <Grid container spacing={2}>
-  <Grid item xs={6} md={8}>
-    <Paper>xs=6 md=8</Paper>
-  </Grid>
-  <Grid item xs={6} md={4}>
-    <Paper>xs=6 md=4</Paper>
-  </Grid>
-  <Grid item xs={6} md={4}>
-    <Paper>xs=6 md=4</Paper>
-  </Grid>
-  <Grid item xs={6} md={8}>
-    <Paper>xs=6 md=8</Paper>
-  </Grid>
-</Grid> */
-}
 
 export default Dashboard;

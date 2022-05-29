@@ -1,33 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { Grid } from '@mui/material';
-import { Box, Card, Link, Typography, Stack } from '@mui/material';
+import { Box, Card } from '@mui/material';
 import styled from 'styled-components'
 import Progress from './Progress'
 import { useMoralis } from 'react-moralis';
-
-const Container = styled.div`
-    padding: 0px 0px;
-    width:190px;
-    ${'' /* height:200px; */}
-    ${'' /* -webkit-box-shadow: 0px 0px 17px -11px black;
-    box-shadow: 0px 0px 15px -8px black; */}
-    border:1px solid #eee;
-    background-color:white;
-    border-radius:15px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    
-    &:hover{
-                transform:scale(1.1);
-                transition: all 2s ease;
-            }
-    @media screen and (max-width: 1200px) {
-        width:120px;
-        height:180px;
-    }
-`;
 
 const AboutContainer = styled.div`
     display:flex;
@@ -132,17 +107,10 @@ const PlantCard = ({image, title, tokenvalue, tokenAddress, tokenId}) => {
     const interval = setInterval(() => {
         setValue (oldValue => {
             const newValue = oldValue + 10;
-
-            // if (newValue === 100) {
-            //     clearInterval(interval);
-            // }
-            // if (level === 3) {
-            //   clearInterval(interval);
-            // }
                 return newValue;
             });
-        },1500);
-    },[]);
+        },2000);
+    },[Moralis]);
 
     useEffect(() => {
         if (value >= 100) {
@@ -168,7 +136,7 @@ const PlantCard = ({image, title, tokenvalue, tokenAddress, tokenId}) => {
               setValue(100);
               setButton( <Button  onClick={createSellOrder} >Sell</Button>);
       }
-  }, [level,tokenValue, tokenvalue]);
+  }, [level,tokenValue, tokenvalue,createSellOrder]);
   return (
     <Card sx={{ borderRadius:4 }}>
         <Box sx={{ position: 'relative'}}>
@@ -188,18 +156,3 @@ const PlantCard = ({image, title, tokenvalue, tokenAddress, tokenId}) => {
   )
 }
 export default PlantCard
-
-{/* <Grid item xs={12} sm={6} md={3} mb={3}>
-        <Container>
-            <Image src= {image}></Image>
-            <AboutContainer>
-            <Title>{title}</Title>
-            <Desc>{stagetitle} </Desc>
-            </AboutContainer>
-            <Progress color={"darkblue"} width={"160px"} value={value} max={100}/>
-            <AboutContainer>
-            <ValueDesc>{ tokenValue }</ValueDesc>
-            {button}
-            </AboutContainer>
-        </Container>
-    </Grid> */}
