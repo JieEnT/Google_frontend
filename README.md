@@ -1,70 +1,18 @@
-# Google Cloud fontend application
+# Pomona Google Cloud Frontend Application (Google For Startups Cloud Hackathon Winner)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+Did you know, in Singapore, over 90% of our food is imported? Local production is important to reduce our reliance on food imports and one way to achieve that is vertical farming. However our local vertical farmers are sadly, challenged with high operational costs and cyclical risk. In the current landscape, local vertical farm start-ups face limited growth potential and poor platform economy, resulting in poor touchpoints with their end-consumers. \
+<br>
+Pomona is a gamified decentralized finance platform that promotes investments in local vertical farming produce.
 
-### `npm start`
+## Features
+### Marketplace
+Aftering connecting their MetaMask wallet to our application, users can buy and sell vegetable Semi-Fungible Tokens of their choice on the OpenSea Marketplace integrated on our platform. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Dashboard
+Users can track their current earnings from the digital vegetable tokens they have invested in so far. Users will also be able to view my current account balance on metamask, the date of the next harvest where they will be able to sell ther digital tokens as well as the total number of vegetable tokens I have invested in from the Pomona marketplace. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Technology Stack
+Pomona's frontend application is built using ReactJS and deployed on Google App Engine. We also utilized Moralis Web3.0 API to index the blockchain, exposing API endpoints to obtain and store SFT-related transactions in our application, providing a verifiable audit trail on our platform for all executed contracts.
